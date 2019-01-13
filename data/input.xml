@@ -1,3 +1,61 @@
-<root>
-  <testje/>
-</root>
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.0/archimate3_Diagram.xsd" identifier="id-ab2109b0-8002-472e-aa60-2e028f9991b6">
+  <name xml:lang="nl">Input model</name>
+  <elements>
+    <element identifier="id-93bf197b-5a00-4b44-856c-2638ae4e30fd" xsi:type="BusinessActor">
+      <name xml:lang="nl">Business Actor</name>
+    </element>
+    <element identifier="id-641ed077-766e-49e0-9f9b-f0b0270c1887" xsi:type="BusinessRole">
+      <name xml:lang="nl">Business Role</name>
+    </element>
+    <element identifier="id-2c82b070-b9fc-4085-a082-727420a92fee" xsi:type="BusinessCollaboration">
+      <name xml:lang="nl">Business Collaboration</name>
+    </element>
+    <element identifier="id-2f4e6e8a-e25d-4269-96b3-fdeb74f09bf9" xsi:type="BusinessInterface">
+      <name xml:lang="nl">Business Interface</name>
+    </element>
+  </elements>
+  <views>
+    <diagrams>
+      <view identifier="id-bdc1bbcf-02b8-4130-8068-27090582e4da" xsi:type="Diagram">
+        <name xml:lang="nl">Default View</name>
+        <node identifier="id-11af1d48-ad46-4ae5-a84c-ffa147fe347e" elementRef="id-93bf197b-5a00-4b44-856c-2638ae4e30fd" xsi:type="Element" x="90" y="50" w="120" h="55">
+          <style>
+            <fillColor r="255" g="255" b="181" a="100" />
+            <lineColor r="92" g="92" b="92" />
+            <font name="Lucida Grande" size="12">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </node>
+        <node identifier="id-27dbf087-1623-421d-a466-cbd0d6574d5e" elementRef="id-641ed077-766e-49e0-9f9b-f0b0270c1887" xsi:type="Element" x="93" y="149" w="120" h="55">
+          <style>
+            <fillColor r="255" g="255" b="181" a="100" />
+            <lineColor r="92" g="92" b="92" />
+            <font name="Lucida Grande" size="12">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </node>
+        <node identifier="id-9c5b4df5-e48a-4f95-85e7-ef065691a8ea" elementRef="id-2c82b070-b9fc-4085-a082-727420a92fee" xsi:type="Element" x="95" y="241" w="120" h="55">
+          <style>
+            <fillColor r="255" g="255" b="181" a="100" />
+            <lineColor r="92" g="92" b="92" />
+            <font name="Lucida Grande" size="12">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </node>
+        <node identifier="id-5d9dc394-c727-4c53-9635-fd4127df1ab4" elementRef="id-2f4e6e8a-e25d-4269-96b3-fdeb74f09bf9" xsi:type="Element" x="97" y="327" w="120" h="55">
+          <style>
+            <fillColor r="255" g="255" b="181" a="100" />
+            <lineColor r="92" g="92" b="92" />
+            <font name="Lucida Grande" size="12">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </node>
+      </view>
+    </diagrams>
+  </views>
+</model>

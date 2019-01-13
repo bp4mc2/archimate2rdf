@@ -1,3 +1,4 @@
 target
 data/*.xsd
 data/*.ttl
+data/*.bak

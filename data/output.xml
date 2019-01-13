@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF xmlns:xs="http://www.w3.org/2001/XMLSchema"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    TEST--TEST
-  </rdf:RDF>
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:amef="http://www.opengroup.org/xsd/archimate/3.0/"
+         xmlns:archimate="http://bp4mc2.org/def/archimate#">
+   <archimate:BusinessActor rdf:about="urn:uuid:id-93bf197b-5a00-4b44-856c-2638ae4e30fd">
+      <rdfs:label xml:lang="nl">Business Actor</rdfs:label>
+   </archimate:BusinessActor>
+   <archimate:BusinessRole rdf:about="urn:uuid:id-641ed077-766e-49e0-9f9b-f0b0270c1887">
+      <rdfs:label xml:lang="nl">Business Role</rdfs:label>
+   </archimate:BusinessRole>
+   <archimate:BusinessCollaboration rdf:about="urn:uuid:id-2c82b070-b9fc-4085-a082-727420a92fee">
+      <rdfs:label xml:lang="nl">Business Collaboration</rdfs:label>
+   </archimate:BusinessCollaboration>
+   <archimate:BusinessInterface rdf:about="urn:uuid:id-2f4e6e8a-e25d-4269-96b3-fdeb74f09bf9">
+      <rdfs:label xml:lang="nl">Business Interface</rdfs:label>
+   </archimate:BusinessInterface>
+</rdf:RDF>
