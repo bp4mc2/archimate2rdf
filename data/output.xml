@@ -10,6 +10,8 @@
       <archimate:triggering rdf:resource="urn:uuid:id-641ed077-766e-49e0-9f9b-f0b0270c1887"/>
       <archimate:flow rdf:resource="urn:uuid:id-641ed077-766e-49e0-9f9b-f0b0270c1887"/>
       <archimate:association rdf:resource="urn:uuid:id-641ed077-766e-49e0-9f9b-f0b0270c1887"/>
+      <archimate:flow rdf:resource="urn:uuid:id-2c82b070-b9fc-4085-a082-727420a92fee"/>
+      <archimate:assignment rdf:resource="urn:uuid:id-ea759c90-08f6-43d5-a5f8-f6c00ab0e0fa"/>
    </archimate:BusinessActor>
    <archimate:BusinessRole rdf:about="urn:uuid:id-641ed077-766e-49e0-9f9b-f0b0270c1887">
       <rdfs:label xml:lang="en">Business Role</rdfs:label>
@@ -31,6 +33,7 @@
    </archimate:BusinessInteraction>
    <archimate:BusinessEvent rdf:about="urn:uuid:id-2d6d2115-70dd-46d8-8d18-0b5bfb95a1a2">
       <rdfs:label xml:lang="en">Business Event</rdfs:label>
+      <archimate:association rdf:resource="urn:uuid:id-60e51c04-b0ba-405b-b891-fb3d6f3beffb"/>
    </archimate:BusinessEvent>
    <archimate:BusinessService rdf:about="urn:uuid:id-8bfa2427-4971-454d-bd01-280ba828da71">
       <rdfs:label xml:lang="en">Business Service</rdfs:label>
@@ -74,5 +77,24 @@
    </archimate:ApplicationService>
    <archimate:DataObject rdf:about="urn:uuid:id-3ae9ea00-aa1e-4269-bd5f-10860d986643">
       <rdfs:label xml:lang="en">Data Object</rdfs:label>
+      <archimate:association rdf:resource="urn:uuid:id-3ae9ea00-aa1e-4269-bd5f-10860d986643"/>
    </archimate:DataObject>
+   <rdf:Statement rdf:about="urn:uuid:id-00846db0-f793-47d0-845b-f8c171ba6f8a">
+      <rdf:subject rdf:resource="urn:uuid:id-3ae9ea00-aa1e-4269-bd5f-10860d986643"/>
+      <rdf:object rdf:resource="urn:uuid:id-3ae9ea00-aa1e-4269-bd5f-10860d986643"/>
+      <rdf:predicate rdf:resource="http://bp4mc2.org/def/archimate#association"/>
+      <rdfs:label xml:lang="en">association</rdfs:label>
+      <rdfs:comment xml:lang="en">The Association relationship models a relationship between objects that is not covered by another, more specific relationship.</rdfs:comment>
+   </rdf:Statement>
+   <rdf:Statement rdf:about="urn:uuid:id-0597fec3-6a8c-48d4-93de-5acf8471c535">
+      <rdf:subject rdf:resource="urn:uuid:id-93bf197b-5a00-4b44-856c-2638ae4e30fd"/>
+      <rdf:object rdf:resource="urn:uuid:id-2c82b070-b9fc-4085-a082-727420a92fee"/>
+      <rdf:predicate rdf:resource="http://bp4mc2.org/def/archimate#flow"/>
+      <archimate:association rdf:resource="urn:uuid:id-b5a043b4-552b-4dd1-bbc4-ecd9c55a64c5"/>
+   </rdf:Statement>
+   <rdf:Statement rdf:about="urn:uuid:id-60e51c04-b0ba-405b-b891-fb3d6f3beffb">
+      <rdf:subject rdf:resource="urn:uuid:id-93bf197b-5a00-4b44-856c-2638ae4e30fd"/>
+      <rdf:object rdf:resource="urn:uuid:id-ea759c90-08f6-43d5-a5f8-f6c00ab0e0fa"/>
+      <rdf:predicate rdf:resource="http://bp4mc2.org/def/archimate#assignment"/>
+   </rdf:Statement>
 </rdf:RDF>

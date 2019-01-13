@@ -35,9 +35,79 @@ We used the ArchiMate Model Exchange File format to create the transformation. T
 
 The actual transformation XSL can be found here: [src/main/java/resources/xsl/archimate2.rdf](https://github.com/bp4mc2/archimate2rdf/blob/master/src/main/resources/xsl/archimate2rdf.xsl)
 
-The follow rules were followed for the transformation:
-- An ArchiMate modeling construct is formalized as an OWL Class;
-- An ArchiMate relation is formalized as an OWL ObjectProperty (lowerCamelCase);
-- The values of accessType (ReadWrite, Read, Write) are formalized as subproperties of the `archimate:access` ObjectProperty and used accordingly;
-- A name of an ArchiMate modeling construct or relation is formalized as a rdfs:label property;
-- A description of an Archimate modeling construct or relation is formalized as a rdfs:comment property;
+The follow rules were followed for the transformation.
+
+### Element to OWL Class
+An ArchiMate Element is mapped to an OWL Class.
+
+The xsi:type of the Element is used as the fragment part for the URI of the OWL Class, UpperCamelCase.
+
+> `<element xsi:type="BusinessRole">` is mapped to `archimate:BusinessRole`
+
+### Relationship to OWL ObjectProperty
+An ArchiMate Relationship is mapped to an OWL ObjectProperty.
+
+The xsi:type of the Relationship is used as the fragment part for the URI of the OWL ObjectProperty, lowerCamelCase.
+
+> `<relationship xsi:type="Assignment">` is mapped to `archimate:assignment`
+
+An alternative to the stricted naming might be to use the verbalisation, for example: "isAssignedTo". Because this would introduce a more complex mapping, it has not (yet) been done.
+
+### Access types as subproperties
+The Access relationship is a relationship that is further subtypes using an accessType property. The most natural way of mapping this to an ontology, is to use subproperties.
+
+> `<relationship xsi:type="Access" accessType="Read">` is mapped to `archimate:readAccess`
+
+### Name to rdfs:label
+The name of an element is mapped to rdfs:label. You could argue that a archimate-specific property would be more appropriate. From a interoperability perspective, we prefer all resources to have a rdfs:label.
+
+### Documentation to rdfs:comment
+The documentation of an element is mapped to rdfs:comment. You could argue that a archimate-specific property would be more appropriate. From a interoperability perspective, we prefer rdfs:comment.
+
+### Reification of relationships using rdf:Statement
+In some cases, an Archimate model will have relationships with their own properties:
+
+- A relationship can have a name;
+- A relationship can have documentation;
+- It is possible to relate an element to a relationship (as of ArchiMate 3.0)
+- It is possible to relate a relationship to an element (as of ArchiMate 3.0)
+
+As is described above, relationships are modelled as OWL ObjectProperties. As such, it is not possible to add extra data to these relationships, because the triple itself doesn't have a URI. For example, the diagram below depicts how a ArchiMate relationship is mapped to RDF:
+
+![](images/relationship.png)
+
+```
+ex:AC1 a archimate:ApplicationComponent;
+  rdfs:label "Application Component #1";
+  archimate:flow ex:AC2;
+.
+```
+
+It is clearly visible, that even in the pre-3.0 versions of ArchiMate, this mapping is problematic with regard to the name or documentation of the relationship. An how would we map the following diagram:
+
+![](images/reification.png)
+
+The solution is the use of rdf:Statement. From this statement, the original triple could even be inferred. We prefer, however, to explicitly include the original triple for easy of use in SPARQL statements:
+
+```
+ex:AC1 a archimate:ApplicationComponent;
+  rdfs:label "Application Component #1"@en;
+  archimate:flow ex:AC2;
+.
+ex:DO1 a archimate:DataObject;
+  rdfs:label "Message"@en;
+.
+ex:rel1 a rdf:Statement;
+  rdf:subject ex:AC1;
+  rdf:object ex:AC2;
+  rdf:predicate archimate:flow;
+  archimate:association ex:DO1;
+.
+```
+
+### Identifier to URI
+The example above used human-readable URI's for the example resources (`ex:AC1`, `ex:AC2`, `ex:DO1` and `ex:rel1`). The actual mapping uses the original identifier from the XML file. As these identifiers are UUID's, a standard mapping is available to create URI's (more specific: URN's) from these UUID's.
+
+> `<element identifier="93bf197b-5a00-4b44-856c-2638ae4e30fd">` is mapped to `<urn:uuid:id-93bf197b-5a00-4b44-856c-2638ae4e30fd>`
+
+It could be argued that we should use URL's instead of URN's. The converter might have an option to mint such URI's. At this moment, we've sticked with the more straightforward mapping from UUID to URN.
