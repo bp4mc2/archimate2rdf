@@ -47,4 +47,32 @@
    <archimate:Product rdf:about="urn:uuid:id-39a76f12-8045-4e8f-8eba-83743bbae4aa">
       <rdfs:label xml:lang="en">Product</rdfs:label>
    </archimate:Product>
+   <archimate:ApplicationComponent rdf:about="urn:uuid:id-0d53f530-018a-4064-b6ab-4dadd57a6f7c">
+      <rdfs:label xml:lang="en">Application Component</rdfs:label>
+      <archimate:readWriteAccess rdf:resource="urn:uuid:id-3ae9ea00-aa1e-4269-bd5f-10860d986643"/>
+   </archimate:ApplicationComponent>
+   <archimate:ApplicationCollaboration rdf:about="urn:uuid:id-7833e962-c0ba-4e5f-a92e-eb072c3d7870">
+      <rdfs:label xml:lang="en">Application Collaboration</rdfs:label>
+   </archimate:ApplicationCollaboration>
+   <archimate:ApplicationInterface rdf:about="urn:uuid:id-e30ea613-d881-4792-b7f5-9d3d4eb2a3f5">
+      <rdfs:label xml:lang="en">Application Interface</rdfs:label>
+   </archimate:ApplicationInterface>
+   <archimate:ApplicationFunction rdf:about="urn:uuid:id-c6084cb6-b5b7-4836-bc91-58627a06c725">
+      <rdfs:label xml:lang="en">Application Function</rdfs:label>
+   </archimate:ApplicationFunction>
+   <archimate:ApplicationInteraction rdf:about="urn:uuid:id-df207549-baaf-4b27-ab83-1da8b9e520da">
+      <rdfs:label xml:lang="en">Application Interaction</rdfs:label>
+   </archimate:ApplicationInteraction>
+   <archimate:ApplicationProcess rdf:about="urn:uuid:id-78a646e2-0e12-4120-a5fc-90c3e86f8d63">
+      <rdfs:label xml:lang="en">Application Process</rdfs:label>
+   </archimate:ApplicationProcess>
+   <archimate:ApplicationEvent rdf:about="urn:uuid:id-d61b4cf4-80e1-4141-b965-240f4b366de0">
+      <rdfs:label xml:lang="en">Application Event</rdfs:label>
+   </archimate:ApplicationEvent>
+   <archimate:ApplicationService rdf:about="urn:uuid:id-21a92486-3173-45c0-a2ff-af9c86623de8">
+      <rdfs:label xml:lang="en">Application Service</rdfs:label>
+   </archimate:ApplicationService>
+   <archimate:DataObject rdf:about="urn:uuid:id-3ae9ea00-aa1e-4269-bd5f-10860d986643">
+      <rdfs:label xml:lang="en">Data Object</rdfs:label>
+   </archimate:DataObject>
 </rdf:RDF>

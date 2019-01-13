@@ -4,207 +4,219 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 # Classes
 archimate:BusinessActor a owl:Class;
-  rdfs:label "BusinessActor";
+  rdfs:label "BusinessActor"@en;
 .
 archimate:BusinessRole a owl:Class;
-  rdfs:label "BusinessRole";
+  rdfs:label "BusinessRole"@en;
 .
 archimate:BusinessCollaboration a owl:Class;
-  rdfs:label "BusinessCollaboration";
+  rdfs:label "BusinessCollaboration"@en;
 .
 archimate:BusinessInterface a owl:Class;
-  rdfs:label "BusinessInterface";
+  rdfs:label "BusinessInterface"@en;
 .
 archimate:BusinessProcess a owl:Class;
-  rdfs:label "BusinessProcess";
+  rdfs:label "BusinessProcess"@en;
 .
 archimate:BusinessFunction a owl:Class;
-  rdfs:label "BusinessFunction";
+  rdfs:label "BusinessFunction"@en;
 .
 archimate:BusinessInteraction a owl:Class;
-  rdfs:label "BusinessInteraction";
+  rdfs:label "BusinessInteraction"@en;
 .
 archimate:BusinessEvent a owl:Class;
-  rdfs:label "BusinessEvent";
+  rdfs:label "BusinessEvent"@en;
 .
 archimate:BusinessService a owl:Class;
-  rdfs:label "BusinessService";
+  rdfs:label "BusinessService"@en;
 .
 archimate:BusinessObject a owl:Class;
-  rdfs:label "BusinessObject";
+  rdfs:label "BusinessObject"@en;
 .
 archimate:Contract a owl:Class;
-  rdfs:label "Contract";
+  rdfs:label "Contract"@en;
 .
 archimate:Representation a owl:Class;
-  rdfs:label "Representation";
+  rdfs:label "Representation"@en;
 .
 archimate:Product a owl:Class;
-  rdfs:label "Product";
+  rdfs:label "Product"@en;
 .
 archimate:ApplicationComponent a owl:Class;
-  rdfs:label "ApplicationComponent";
+  rdfs:label "ApplicationComponent"@en;
 .
 archimate:ApplicationCollaboration a owl:Class;
-  rdfs:label "ApplicationCollaboration";
+  rdfs:label "ApplicationCollaboration"@en;
 .
 archimate:ApplicationInterface a owl:Class;
-  rdfs:label "ApplicationInterface";
+  rdfs:label "ApplicationInterface"@en;
 .
 archimate:ApplicationFunction a owl:Class;
-  rdfs:label "ApplicationFunction";
+  rdfs:label "ApplicationFunction"@en;
 .
 archimate:ApplicationInteraction a owl:Class;
-  rdfs:label "ApplicationInteraction";
+  rdfs:label "ApplicationInteraction"@en;
 .
 archimate:ApplicationProcess a owl:Class;
-  rdfs:label "ApplicationProcess";
+  rdfs:label "ApplicationProcess"@en;
 .
 archimate:ApplicationEvent a owl:Class;
-  rdfs:label "ApplicationEvent";
+  rdfs:label "ApplicationEvent"@en;
 .
 archimate:ApplicationService a owl:Class;
-  rdfs:label "ApplicationService";
+  rdfs:label "ApplicationService"@en;
 .
 archimate:DataObject a owl:Class;
-  rdfs:label "DataObject";
+  rdfs:label "DataObject"@en;
 .
 archimate:Node a owl:Class;
-  rdfs:label "Node";
+  rdfs:label "Node"@en;
 .
 archimate:Device a owl:Class;
-  rdfs:label "Device";
+  rdfs:label "Device"@en;
 .
 archimate:SystemSoftware a owl:Class;
-  rdfs:label "SystemSoftware";
+  rdfs:label "SystemSoftware"@en;
 .
 archimate:TechnologyCollaboration a owl:Class;
-  rdfs:label "TechnologyCollaboration";
+  rdfs:label "TechnologyCollaboration"@en;
 .
 archimate:TechnologyInterface a owl:Class;
-  rdfs:label "TechnologyInterface";
+  rdfs:label "TechnologyInterface"@en;
 .
 archimate:Path a owl:Class;
-  rdfs:label "Path";
+  rdfs:label "Path"@en;
 .
 archimate:CommunicationNetwork a owl:Class;
-  rdfs:label "CommunicationNetwork";
+  rdfs:label "CommunicationNetwork"@en;
 .
 archimate:TechnologyFunction a owl:Class;
-  rdfs:label "TechnologyFunction";
+  rdfs:label "TechnologyFunction"@en;
 .
 archimate:TechnologyProcess a owl:Class;
-  rdfs:label "TechnologyProcess";
+  rdfs:label "TechnologyProcess"@en;
 .
 archimate:TechnologyInteraction a owl:Class;
-  rdfs:label "TechnologyInteraction";
+  rdfs:label "TechnologyInteraction"@en;
 .
 archimate:TechnologyEvent a owl:Class;
-  rdfs:label "TechnologyEvent";
+  rdfs:label "TechnologyEvent"@en;
 .
 archimate:TechnologyService a owl:Class;
-  rdfs:label "TechnologyService";
+  rdfs:label "TechnologyService"@en;
 .
 archimate:Artifact a owl:Class;
-  rdfs:label "Artifact";
+  rdfs:label "Artifact"@en;
 .
 archimate:Equipment a owl:Class;
-  rdfs:label "Equipment";
+  rdfs:label "Equipment"@en;
 .
 archimate:Facility a owl:Class;
-  rdfs:label "Facility";
+  rdfs:label "Facility"@en;
 .
 archimate:DistributionNetwork a owl:Class;
-  rdfs:label "DistributionNetwork";
+  rdfs:label "DistributionNetwork"@en;
 .
 archimate:Material a owl:Class;
-  rdfs:label "Material";
+  rdfs:label "Material"@en;
 .
 archimate:Stakeholder a owl:Class;
-  rdfs:label "Stakeholder";
+  rdfs:label "Stakeholder"@en;
 .
 archimate:Driver a owl:Class;
-  rdfs:label "Driver";
+  rdfs:label "Driver"@en;
 .
 archimate:Assessment a owl:Class;
-  rdfs:label "Assessment";
+  rdfs:label "Assessment"@en;
 .
 archimate:Goal a owl:Class;
-  rdfs:label "Goal";
+  rdfs:label "Goal"@en;
 .
 archimate:Outcome a owl:Class;
-  rdfs:label "Outcome";
+  rdfs:label "Outcome"@en;
 .
 archimate:Principle a owl:Class;
-  rdfs:label "Principle";
+  rdfs:label "Principle"@en;
 .
 archimate:Requirement a owl:Class;
-  rdfs:label "Requirement";
+  rdfs:label "Requirement"@en;
 .
 archimate:Constraint a owl:Class;
-  rdfs:label "Constraint";
+  rdfs:label "Constraint"@en;
 .
 archimate:Meaning a owl:Class;
-  rdfs:label "Meaning";
+  rdfs:label "Meaning"@en;
 .
 archimate:Value a owl:Class;
-  rdfs:label "Value";
+  rdfs:label "Value"@en;
 .
 archimate:Resource a owl:Class;
-  rdfs:label "Resource";
+  rdfs:label "Resource"@en;
 .
 archimate:Capability a owl:Class;
-  rdfs:label "Capability";
+  rdfs:label "Capability"@en;
 .
 archimate:CourseOfAction a owl:Class;
-  rdfs:label "CourseOfAction";
+  rdfs:label "CourseOfAction"@en;
 .
 archimate:WorkPackage a owl:Class;
-  rdfs:label "WorkPackage";
+  rdfs:label "WorkPackage"@en;
 .
 archimate:Deliverable a owl:Class;
-  rdfs:label "Deliverable";
+  rdfs:label "Deliverable"@en;
 .
 archimate:ImplementationEvent a owl:Class;
-  rdfs:label "ImplementationEvent";
+  rdfs:label "ImplementationEvent"@en;
 .
 archimate:Plateau a owl:Class;
-  rdfs:label "Plateau";
+  rdfs:label "Plateau"@en;
 .
 archimate:Gap a owl:Class;
-  rdfs:label "Gap";
+  rdfs:label "Gap"@en;
 .
 # Properties
 archimate:composition a owl:ObjectProperty;
-  rdfs:label "composition";
+  rdfs:label "composition"@en;
 .
 archimate:aggregation a owl:ObjectProperty;
-  rdfs:label "aggregation";
+  rdfs:label "aggregation"@en;
 .
 archimate:assignment a owl:ObjectProperty;
-  rdfs:label "assignment";
+  rdfs:label "assignment"@en;
 .
 archimate:realization a owl:ObjectProperty;
-  rdfs:label "realization";
+  rdfs:label "realization"@en;
 .
 archimate:serving a owl:ObjectProperty;
-  rdfs:label "serving";
+  rdfs:label "serving"@en;
 .
 archimate:access a owl:ObjectProperty;
-  rdfs:label "access";
+  rdfs:label "access"@en;
 .
 archimate:influence a owl:ObjectProperty;
-  rdfs:label "influence";
+  rdfs:label "influence"@en;
 .
 archimate:triggering a owl:ObjectProperty;
-  rdfs:label "triggering";
+  rdfs:label "triggering"@en;
 .
 archimate:flow a owl:ObjectProperty;
-  rdfs:label "flow";
+  rdfs:label "flow"@en;
 .
 archimate:specialization a owl:ObjectProperty;
-  rdfs:label "specialization";
+  rdfs:label "specialization"@en;
 .
 archimate:association a owl:ObjectProperty;
-  rdfs:label "association";
+  rdfs:label "association"@en;
+.
+archimate:readAccess a owl:ObjectProperty;
+	rdfs:subPropertyOf archimate:access;
+  rdfs:label "readAccess"@en;
+.
+archimate:writeAccess a owl:ObjectProperty;
+  rdfs:subPropertyOf archimate:access;
+  rdfs:label "writeAccess"@en;
+.
+archimate:readWriteAccess a owl:ObjectProperty;
+  rdfs:subPropertyOf archimate:access;
+  rdfs:label "readWriteAccess"@en;
 .

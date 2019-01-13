@@ -37,6 +37,7 @@ The actual transformation XSL can be found here: [src/main/java/resources/xsl/ar
 
 The follow rules were followed for the transformation:
 - An ArchiMate modeling construct is formalized as an OWL Class;
-- An ArchiMate relation is formalized as an OWL ObjectProperty (lowerCamelCase).
+- An ArchiMate relation is formalized as an OWL ObjectProperty (lowerCamelCase);
+- The values of accessType (ReadWrite, Read, Write) are formalized as subproperties of the `archimate:access` ObjectProperty and used accordingly;
 - A name of an ArchiMate modeling construct or relation is formalized as a rdfs:label property;
 - A description of an Archimate modeling construct or relation is formalized as a rdfs:comment property;

@@ -31,7 +31,15 @@
           <rdfs:comment><xsl:apply-templates select="." mode="languagenode"/></rdfs:comment>
         </xsl:for-each>
         <xsl:for-each select="key('rel',@identifier)">
-          <xsl:element name="archimate:{lower-case(@xsi:type)}">
+          <xsl:variable name="name">
+            <xsl:choose>
+              <xsl:when test="@xsi:type='Access' and @accessType='Read'">readAccess</xsl:when>
+              <xsl:when test="@xsi:type='Access' and @accessType='ReadWrite'">readWriteAccess</xsl:when>
+              <xsl:when test="@xsi:type='Access' and @accessType='Write'">writeAccess</xsl:when>
+              <xsl:otherwise><xsl:value-of select="lower-case(@xsi:type)"/></xsl:otherwise>
+            </xsl:choose>
+          </xsl:variable>
+          <xsl:element name="archimate:{$name}">
             <xsl:attribute name="rdf:resource">urn:uuid:<xsl:value-of select="@target"/></xsl:attribute>
           </xsl:element>
         </xsl:for-each>

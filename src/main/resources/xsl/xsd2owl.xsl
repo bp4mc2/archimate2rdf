@@ -43,7 +43,7 @@
     <xsl:text>archimate:</xsl:text><xsl:value-of select="@name"/>
     <xsl:text> a owl:Class;
 </xsl:text>
-    <xsl:text>  rdfs:label "</xsl:text><xsl:value-of select="@name"/><xsl:text>";
+    <xsl:text>  rdfs:label "</xsl:text><xsl:value-of select="@name"/><xsl:text>"@en;
 .
 </xsl:text>
   </xsl:for-each>
@@ -53,10 +53,23 @@
     <xsl:text>archimate:</xsl:text><xsl:value-of select="lower-case(@name)"/>
     <xsl:text> a owl:ObjectProperty;
 </xsl:text>
-    <xsl:text>  rdfs:label "</xsl:text><xsl:value-of select="lower-case(@name)"/><xsl:text>";
+    <xsl:text>  rdfs:label "</xsl:text><xsl:value-of select="lower-case(@name)"/><xsl:text>"@en;
 .
 </xsl:text>
   </xsl:for-each>
+	<xsl:text>archimate:readAccess a owl:ObjectProperty;
+	rdfs:subPropertyOf archimate:access;
+  rdfs:label "readAccess"@en;
+.
+archimate:writeAccess a owl:ObjectProperty;
+  rdfs:subPropertyOf archimate:access;
+  rdfs:label "writeAccess"@en;
+.
+archimate:readWriteAccess a owl:ObjectProperty;
+  rdfs:subPropertyOf archimate:access;
+  rdfs:label "readWriteAccess"@en;
+.
+</xsl:text>
 </xsl:template>
 
 </xsl:stylesheet>
