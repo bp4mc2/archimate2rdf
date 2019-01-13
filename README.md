@@ -33,7 +33,7 @@ We used the ArchiMate Model Exchange File format to create the transformation. T
 2. It's tool independent - any body could use our transformation software, regardless of the tool used;
 3. It's an XML format, so transformation using XSL is quite straightformard and easy understood.
 
-The actual transformation XSL can be found here: [src/main/java/resources/xsl/archimate2.rdf](https://github.com/bp4mc2/archimate2rdf/blob/master/src/main/java/resources/xsl/archimate2rdf.xsl)
+The actual transformation XSL can be found here: [src/main/java/resources/xsl/archimate2.rdf](https://github.com/bp4mc2/archimate2rdf/blob/master/src/main/resources/xsl/archimate2rdf.xsl)
 
 The follow rules were followed for the transformation:
 - An ArchiMate modeling construct is formalized as an OWL Class;
