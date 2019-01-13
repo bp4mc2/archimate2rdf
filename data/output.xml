@@ -79,6 +79,16 @@
       <rdfs:label xml:lang="en">Data Object</rdfs:label>
       <archimate:association rdf:resource="urn:uuid:id-3ae9ea00-aa1e-4269-bd5f-10860d986643"/>
    </archimate:DataObject>
+   <archimate:ApplicationComponent rdf:about="urn:uuid:id-4bcf2887-021d-4d81-b6eb-38167c858854">
+      <rdfs:label xml:lang="en">Application Component #1</rdfs:label>
+      <archimate:flow rdf:resource="urn:uuid:id-12b25a36-1bba-4477-a575-fa38ab77b91a"/>
+   </archimate:ApplicationComponent>
+   <archimate:ApplicationComponent rdf:about="urn:uuid:id-12b25a36-1bba-4477-a575-fa38ab77b91a">
+      <rdfs:label xml:lang="en">Application Component #2</rdfs:label>
+   </archimate:ApplicationComponent>
+   <archimate:DataObject rdf:about="urn:uuid:id-481ac5f3-89c6-4f16-b6d4-de42b52fedc7">
+      <rdfs:label xml:lang="en">Message</rdfs:label>
+   </archimate:DataObject>
    <rdf:Statement rdf:about="urn:uuid:id-00846db0-f793-47d0-845b-f8c171ba6f8a">
       <rdf:subject rdf:resource="urn:uuid:id-3ae9ea00-aa1e-4269-bd5f-10860d986643"/>
       <rdf:object rdf:resource="urn:uuid:id-3ae9ea00-aa1e-4269-bd5f-10860d986643"/>
@@ -96,5 +106,11 @@
       <rdf:subject rdf:resource="urn:uuid:id-93bf197b-5a00-4b44-856c-2638ae4e30fd"/>
       <rdf:object rdf:resource="urn:uuid:id-ea759c90-08f6-43d5-a5f8-f6c00ab0e0fa"/>
       <rdf:predicate rdf:resource="http://bp4mc2.org/def/archimate#assignment"/>
+   </rdf:Statement>
+   <rdf:Statement rdf:about="urn:uuid:id-058e13ea-e979-4d35-a780-f798ff8b3871">
+      <rdf:subject rdf:resource="urn:uuid:id-4bcf2887-021d-4d81-b6eb-38167c858854"/>
+      <rdf:object rdf:resource="urn:uuid:id-12b25a36-1bba-4477-a575-fa38ab77b91a"/>
+      <rdf:predicate rdf:resource="http://bp4mc2.org/def/archimate#flow"/>
+      <archimate:association rdf:resource="urn:uuid:id-481ac5f3-89c6-4f16-b6d4-de42b52fedc7"/>
    </rdf:Statement>
 </rdf:RDF>
