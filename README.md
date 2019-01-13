@@ -33,9 +33,9 @@ We used the ArchiMate Model Exchange File format to create the transformation. T
 2. It's tool independent - anybody can use our transformation software, regardless of the tool used;
 3. It's an XML format, so transformation using XSL is quite straightforward and easily understood.
 
-The actual transformation XSL can be found here: [src/main/java/resources/xsl/archimate2.rdf](https://github.com/bp4mc2/archimate2rdf/blob/master/src/main/resources/xsl/archimate2rdf.xsl)
+The actual transformation XSL can be found here: [src/main/java/resources/xsl/archimate2rdf.xsl](https://github.com/bp4mc2/archimate2rdf/blob/master/src/main/resources/xsl/archimate2rdf.xsl)
 
-The follow rules were followed for the transformation:
+The following rules were followed for the transformation:
 
 ### Element to OWL Class
 An ArchiMate Element is mapped to an OWL Class.
