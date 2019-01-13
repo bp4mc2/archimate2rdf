@@ -1,5 +1,6 @@
-prefix owl: <>http://www.w3.org/2002/07/owl#>
-prefix rdfs: <>http://www.w3.org/2000/01/rdf-schema#>
+prefix archimate: <http://bp4mc2.org/def/archimate#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 # Classes
 archimate:BusinessActor a owl:Class;
