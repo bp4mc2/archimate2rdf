@@ -1,0 +1,209 @@
+prefix owl: <>http://www.w3.org/2002/07/owl#>
+prefix rdfs: <>http://www.w3.org/2000/01/rdf-schema#>
+
+# Classes
+archimate:BusinessActor a owl:Class;
+  rdfs:label "BusinessActor";
+.
+archimate:BusinessRole a owl:Class;
+  rdfs:label "BusinessRole";
+.
+archimate:BusinessCollaboration a owl:Class;
+  rdfs:label "BusinessCollaboration";
+.
+archimate:BusinessInterface a owl:Class;
+  rdfs:label "BusinessInterface";
+.
+archimate:BusinessProcess a owl:Class;
+  rdfs:label "BusinessProcess";
+.
+archimate:BusinessFunction a owl:Class;
+  rdfs:label "BusinessFunction";
+.
+archimate:BusinessInteraction a owl:Class;
+  rdfs:label "BusinessInteraction";
+.
+archimate:BusinessEvent a owl:Class;
+  rdfs:label "BusinessEvent";
+.
+archimate:BusinessService a owl:Class;
+  rdfs:label "BusinessService";
+.
+archimate:BusinessObject a owl:Class;
+  rdfs:label "BusinessObject";
+.
+archimate:Contract a owl:Class;
+  rdfs:label "Contract";
+.
+archimate:Representation a owl:Class;
+  rdfs:label "Representation";
+.
+archimate:Product a owl:Class;
+  rdfs:label "Product";
+.
+archimate:ApplicationComponent a owl:Class;
+  rdfs:label "ApplicationComponent";
+.
+archimate:ApplicationCollaboration a owl:Class;
+  rdfs:label "ApplicationCollaboration";
+.
+archimate:ApplicationInterface a owl:Class;
+  rdfs:label "ApplicationInterface";
+.
+archimate:ApplicationFunction a owl:Class;
+  rdfs:label "ApplicationFunction";
+.
+archimate:ApplicationInteraction a owl:Class;
+  rdfs:label "ApplicationInteraction";
+.
+archimate:ApplicationProcess a owl:Class;
+  rdfs:label "ApplicationProcess";
+.
+archimate:ApplicationEvent a owl:Class;
+  rdfs:label "ApplicationEvent";
+.
+archimate:ApplicationService a owl:Class;
+  rdfs:label "ApplicationService";
+.
+archimate:DataObject a owl:Class;
+  rdfs:label "DataObject";
+.
+archimate:Node a owl:Class;
+  rdfs:label "Node";
+.
+archimate:Device a owl:Class;
+  rdfs:label "Device";
+.
+archimate:SystemSoftware a owl:Class;
+  rdfs:label "SystemSoftware";
+.
+archimate:TechnologyCollaboration a owl:Class;
+  rdfs:label "TechnologyCollaboration";
+.
+archimate:TechnologyInterface a owl:Class;
+  rdfs:label "TechnologyInterface";
+.
+archimate:Path a owl:Class;
+  rdfs:label "Path";
+.
+archimate:CommunicationNetwork a owl:Class;
+  rdfs:label "CommunicationNetwork";
+.
+archimate:TechnologyFunction a owl:Class;
+  rdfs:label "TechnologyFunction";
+.
+archimate:TechnologyProcess a owl:Class;
+  rdfs:label "TechnologyProcess";
+.
+archimate:TechnologyInteraction a owl:Class;
+  rdfs:label "TechnologyInteraction";
+.
+archimate:TechnologyEvent a owl:Class;
+  rdfs:label "TechnologyEvent";
+.
+archimate:TechnologyService a owl:Class;
+  rdfs:label "TechnologyService";
+.
+archimate:Artifact a owl:Class;
+  rdfs:label "Artifact";
+.
+archimate:Equipment a owl:Class;
+  rdfs:label "Equipment";
+.
+archimate:Facility a owl:Class;
+  rdfs:label "Facility";
+.
+archimate:DistributionNetwork a owl:Class;
+  rdfs:label "DistributionNetwork";
+.
+archimate:Material a owl:Class;
+  rdfs:label "Material";
+.
+archimate:Stakeholder a owl:Class;
+  rdfs:label "Stakeholder";
+.
+archimate:Driver a owl:Class;
+  rdfs:label "Driver";
+.
+archimate:Assessment a owl:Class;
+  rdfs:label "Assessment";
+.
+archimate:Goal a owl:Class;
+  rdfs:label "Goal";
+.
+archimate:Outcome a owl:Class;
+  rdfs:label "Outcome";
+.
+archimate:Principle a owl:Class;
+  rdfs:label "Principle";
+.
+archimate:Requirement a owl:Class;
+  rdfs:label "Requirement";
+.
+archimate:Constraint a owl:Class;
+  rdfs:label "Constraint";
+.
+archimate:Meaning a owl:Class;
+  rdfs:label "Meaning";
+.
+archimate:Value a owl:Class;
+  rdfs:label "Value";
+.
+archimate:Resource a owl:Class;
+  rdfs:label "Resource";
+.
+archimate:Capability a owl:Class;
+  rdfs:label "Capability";
+.
+archimate:CourseOfAction a owl:Class;
+  rdfs:label "CourseOfAction";
+.
+archimate:WorkPackage a owl:Class;
+  rdfs:label "WorkPackage";
+.
+archimate:Deliverable a owl:Class;
+  rdfs:label "Deliverable";
+.
+archimate:ImplementationEvent a owl:Class;
+  rdfs:label "ImplementationEvent";
+.
+archimate:Plateau a owl:Class;
+  rdfs:label "Plateau";
+.
+archimate:Gap a owl:Class;
+  rdfs:label "Gap";
+.
+# Properties
+archimate:composition a owl:ObjectProperty;
+  rdfs:label "composition";
+.
+archimate:aggregation a owl:ObjectProperty;
+  rdfs:label "aggregation";
+.
+archimate:assignment a owl:ObjectProperty;
+  rdfs:label "assignment";
+.
+archimate:realization a owl:ObjectProperty;
+  rdfs:label "realization";
+.
+archimate:serving a owl:ObjectProperty;
+  rdfs:label "serving";
+.
+archimate:access a owl:ObjectProperty;
+  rdfs:label "access";
+.
+archimate:influence a owl:ObjectProperty;
+  rdfs:label "influence";
+.
+archimate:triggering a owl:ObjectProperty;
+  rdfs:label "triggering";
+.
+archimate:flow a owl:ObjectProperty;
+  rdfs:label "flow";
+.
+archimate:specialization a owl:ObjectProperty;
+  rdfs:label "specialization";
+.
+archimate:association a owl:ObjectProperty;
+  rdfs:label "association";
+.
