@@ -1,20 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF xmlns:xs="http://www.w3.org/2001/XMLSchema"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-         xmlns:amef="http://www.opengroup.org/xsd/archimate/3.0/"
          xmlns:archimate="http://bp4mc2.org/def/archimate#">
    <archimate:BusinessActor rdf:about="urn:uuid:id-93bf197b-5a00-4b44-856c-2638ae4e30fd">
-      <rdfs:label xml:lang="nl">Business Actor</rdfs:label>
+      <rdfs:label xml:lang="en">Business Actor</rdfs:label>
+      <rdfs:comment xml:lang="en">A Business Actor is defined as an entity that performs behaviour in an organisation such as business processes or functions.</rdfs:comment>
+      <archimate:assignment rdf:resource="urn:uuid:id-641ed077-766e-49e0-9f9b-f0b0270c1887"/>
+      <archimate:serving rdf:resource="urn:uuid:id-641ed077-766e-49e0-9f9b-f0b0270c1887"/>
+      <archimate:triggering rdf:resource="urn:uuid:id-641ed077-766e-49e0-9f9b-f0b0270c1887"/>
+      <archimate:flow rdf:resource="urn:uuid:id-641ed077-766e-49e0-9f9b-f0b0270c1887"/>
+      <archimate:association rdf:resource="urn:uuid:id-641ed077-766e-49e0-9f9b-f0b0270c1887"/>
    </archimate:BusinessActor>
    <archimate:BusinessRole rdf:about="urn:uuid:id-641ed077-766e-49e0-9f9b-f0b0270c1887">
-      <rdfs:label xml:lang="nl">Business Role</rdfs:label>
+      <rdfs:label xml:lang="en">Business Role</rdfs:label>
    </archimate:BusinessRole>
    <archimate:BusinessCollaboration rdf:about="urn:uuid:id-2c82b070-b9fc-4085-a082-727420a92fee">
-      <rdfs:label xml:lang="nl">Business Collaboration</rdfs:label>
+      <rdfs:label xml:lang="en">Business Collaboration</rdfs:label>
    </archimate:BusinessCollaboration>
    <archimate:BusinessInterface rdf:about="urn:uuid:id-2f4e6e8a-e25d-4269-96b3-fdeb74f09bf9">
-      <rdfs:label xml:lang="nl">Business Interface</rdfs:label>
+      <rdfs:label xml:lang="en">Business Interface</rdfs:label>
    </archimate:BusinessInterface>
+   <archimate:BusinessProcess rdf:about="urn:uuid:id-7eeccc04-3156-4ab9-b510-32e5d75f96a7">
+      <rdfs:label xml:lang="en">Business Process</rdfs:label>
+   </archimate:BusinessProcess>
+   <archimate:BusinessFunction rdf:about="urn:uuid:id-ea759c90-08f6-43d5-a5f8-f6c00ab0e0fa">
+      <rdfs:label xml:lang="en">Business Function</rdfs:label>
+   </archimate:BusinessFunction>
+   <archimate:BusinessInteraction rdf:about="urn:uuid:id-bb4c44af-cf33-4128-b9f3-130c95a62de6">
+      <rdfs:label xml:lang="en">Business Interaction</rdfs:label>
+   </archimate:BusinessInteraction>
+   <archimate:BusinessEvent rdf:about="urn:uuid:id-2d6d2115-70dd-46d8-8d18-0b5bfb95a1a2">
+      <rdfs:label xml:lang="en">Business Event</rdfs:label>
+   </archimate:BusinessEvent>
+   <archimate:BusinessService rdf:about="urn:uuid:id-8bfa2427-4971-454d-bd01-280ba828da71">
+      <rdfs:label xml:lang="en">Business Service</rdfs:label>
+   </archimate:BusinessService>
+   <archimate:BusinessObject rdf:about="urn:uuid:id-b5a043b4-552b-4dd1-bbc4-ecd9c55a64c5">
+      <rdfs:label xml:lang="en">Business Object</rdfs:label>
+   </archimate:BusinessObject>
+   <archimate:Contract rdf:about="urn:uuid:id-3d4b8256-b991-4049-85f9-ebb8ba96aff9">
+      <rdfs:label xml:lang="en">Contract</rdfs:label>
+   </archimate:Contract>
+   <archimate:Representation rdf:about="urn:uuid:id-ffd0a914-87e0-4b54-8760-24e6433397ae">
+      <rdfs:label xml:lang="en">Representation</rdfs:label>
+   </archimate:Representation>
+   <archimate:Product rdf:about="urn:uuid:id-39a76f12-8045-4e8f-8eba-83743bbae4aa">
+      <rdfs:label xml:lang="en">Product</rdfs:label>
+   </archimate:Product>
 </rdf:RDF>
