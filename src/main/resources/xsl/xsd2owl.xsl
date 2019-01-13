@@ -11,6 +11,7 @@
 </xsl:variable>
 
 <xsl:variable name="prefixes">
+  <archimate>http://bp4mc2.org/def/archimate#</archimate>
   <owl>http://www.w3.org/2002/07/owl#</owl>
   <rdfs>http://www.w3.org/2000/01/rdf-schema#</rdfs>
 </xsl:variable>
@@ -19,7 +20,7 @@
 
 <xsl:template match="*" mode="prefix">
   <xsl:text>prefix </xsl:text><xsl:value-of select="local-name()"/><xsl:text>: </xsl:text>
-  <xsl:text>&lt;></xsl:text><xsl:value-of select="."/><xsl:text>&gt;
+  <xsl:text>&lt;</xsl:text><xsl:value-of select="."/><xsl:text>&gt;
 </xsl:text>
 </xsl:template>
 
