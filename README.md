@@ -11,9 +11,9 @@ The Open Group has published the ArchiMate Model Exchange File format - a standa
 
 The ontology we use can be found here: http://bp4mc2.org/def/archimate
 
-Unfortunately, no official archimate ontology exists. Different initiatives have been undertaken (listed below - as far as we know), but all these initiatives are the result a transformation effort. And for that, you need a target ontology! Our own target ontology is nothing better: something we need to translate the archimate exchange file format to.
+Unfortunately, no official archimate ontology exists. Different initiatives have been undertaken (listed below - as far as we know), but all these initiatives have in fact only a transformation goal. And for that, you need a target ontology! Our own target ontology is nothing better: something we need to translate a particular archimate exchange file to. Interchange of RDF archimate files will only be possible if we all agree upon one, canonical, ArchiMate ontology.
 
-> We urge the Open Group to publish the archimate ontology at their own namespace! We welcome them to use ours, or one of the other ontologies mentioned below. Please :-)
+**We urge the Open Group to publish the archimate ontology at their own namespace! We welcome them to use ours, or one of the other ontologies mentioned below. Please :-)**
 
 ### Other efforts
 
@@ -30,12 +30,12 @@ Some other people have tried to create an archimate ontology, or mention the nee
 We used the ArchiMate Model Exchange File format to create the transformation. The reason we used this file format is:
 
 1. It's a standard - a clear meaning is understood;
-2. It's tool independent - any body could use our transformation software, regardless of the tool used;
-3. It's an XML format, so transformation using XSL is quite straightformard and easy understood.
+2. It's tool independent - anybody can use our transformation software, regardless of the tool used;
+3. It's an XML format, so transformation using XSL is quite straightforward and easily understood.
 
 The actual transformation XSL can be found here: [src/main/java/resources/xsl/archimate2.rdf](https://github.com/bp4mc2/archimate2rdf/blob/master/src/main/resources/xsl/archimate2rdf.xsl)
 
-The follow rules were followed for the transformation.
+The follow rules were followed for the transformation:
 
 ### Element to OWL Class
 An ArchiMate Element is mapped to an OWL Class.
@@ -51,10 +51,10 @@ The xsi:type of the Relationship is used as the fragment part for the URI of the
 
 > `<relationship xsi:type="Assignment">` is mapped to `archimate:assignment`
 
-An alternative to the stricted naming might be to use the verbalisation, for example: "isAssignedTo". Because this would introduce a more complex mapping, it has not (yet) been done.
+An alternative to the stricted naming might be to use the verbalisation, for example: "isAssignedTo". Because this would introduce a more complex mapping, we have not done that (yet).
 
 ### Access types as subproperties
-The Access relationship is a relationship that is further subtypes using an accessType property. The most natural way of mapping this to an ontology, is to use subproperties.
+The Access relationship is a relationship that is further subtyped using an accessType property. The most natural way of mapping this to an ontology, is to use subproperties.
 
 > `<relationship xsi:type="Access" accessType="Read">` is mapped to `archimate:readAccess`
 
@@ -69,8 +69,8 @@ In some cases, an Archimate model will have relationships with their own propert
 
 - A relationship can have a name;
 - A relationship can have documentation;
-- It is possible to relate an element to a relationship (as of ArchiMate 3.0)
-- It is possible to relate a relationship to an element (as of ArchiMate 3.0)
+- It is possible to relate an element to a relationship (as of ArchiMate 3.0);
+- It is possible to relate a relationship to an element (as of ArchiMate 3.0).
 
 As is described above, relationships are modelled as OWL ObjectProperties. As such, it is not possible to add extra data to these relationships, because the triple itself doesn't have a URI. For example, the diagram below depicts how a ArchiMate relationship is mapped to RDF:
 
@@ -81,18 +81,24 @@ ex:AC1 a archimate:ApplicationComponent;
   rdfs:label "Application Component #1";
   archimate:flow ex:AC2;
 .
+ex:AC2 a archimate:ApplicationComponent;
+  rdfs:label "Application Component #2"@en;
+.
 ```
 
 It is clearly visible, that even in the pre-3.0 versions of ArchiMate, this mapping is problematic with regard to the name or documentation of the relationship. An how would we map the following diagram:
 
 ![](images/reification.png)
 
-The solution is the use of rdf:Statement. From this statement, the original triple could even be inferred. We prefer, however, to explicitly include the original triple for easy of use in SPARQL statements:
+The solution is the use of rdf:Statement. From this statement, the original triple could even be inferred. We prefer, however, to explicitly include the original triple for easy of use, for example in SPARQL queries:
 
 ```
 ex:AC1 a archimate:ApplicationComponent;
   rdfs:label "Application Component #1"@en;
   archimate:flow ex:AC2;
+.
+ex:AC2 a archimate:ApplicationComponent;
+  rdfs:label "Application Component #2"@en;
 .
 ex:DO1 a archimate:DataObject;
   rdfs:label "Message"@en;
