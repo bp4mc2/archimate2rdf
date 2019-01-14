@@ -3,7 +3,7 @@
 	<groupId>org.bp4mc2.archimate2rdf</groupId>
 	<artifactId>archimate2rdf</artifactId>
 	<packaging>jar</packaging>
-	<version>0.0.1</version>
+	<version>0.1.1-SNAPSHOT</version>
 	<name>archimate2rdf</name>
   <properties>
       <java.version>1.8</java.version>

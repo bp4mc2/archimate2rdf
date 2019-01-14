@@ -5,6 +5,8 @@ The Open Group has published the ArchiMate Model Exchange File format - a standa
 
 ## Usage
 
+Build, or download [archimate2rdf.jar](https://github.com/bp4mc2/archimate2rdf/releases/download/v0.1.0/archimate2rdf.jar)
+
 `java -jar archimate2rdf.jar <input.xml> <output.xml>`
 
 ## Ontology
