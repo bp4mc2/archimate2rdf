@@ -23,7 +23,10 @@ Some other people have tried to create an archimate ontology, or mention the nee
 - https://github.com/nfigay/archimate.owl
 - https://github.com/archimatetool/OWLExchange
 - https://forum.archimatetool.com/index.php?topic=309.0
+- https://groups.google.com/forum/#!topic/open-archimate-forum/poUR2BRqve0
 - https://github.com/ikm-group/ArchiMEO/blob/master/ARCHIMEO/ARCHIMATE/ArchiMate.ttl
+- https://link.springer.com/chapter/10.1007/978-3-642-54734-8_7
+- https://www.sba-research.org/wp-content/uploads/publications/ant_csimq14.pdf
 
 ## Mapping
 
