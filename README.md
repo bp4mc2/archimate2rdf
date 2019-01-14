@@ -72,7 +72,7 @@ In some cases, an Archimate model will have relationships with their own propert
 - It is possible to relate an element to a relationship (as of ArchiMate 3.0);
 - It is possible to relate a relationship to an element (as of ArchiMate 3.0).
 
-As is described above, relationships are modelled as OWL ObjectProperties. As such, it is not possible to add extra data to these relationships, because the triple itself doesn't have a URI. For example, the diagram below depicts how a ArchiMate relationship is mapped to RDF:
+As is described above, relationships are modelled as OWL ObjectProperties. As such, it is not possible to add extra data to these relationships, because the triple itself doesn't have a URI. For example, the example below depicts how a ArchiMate relationship is mapped to RDF:
 
 ![](images/relationship.png)
 
@@ -86,7 +86,7 @@ ex:AC2 a archimate:ApplicationComponent;
 .
 ```
 
-It is clearly visible, that even in the pre-3.0 versions of ArchiMate, this mapping is problematic with regard to the name or documentation of the relationship. An how would we map the following diagram:
+It is clearly visible, that even in the pre-3.0 versions of ArchiMate, this mapping is problematic with regard to the name or documentation of the relationship. An how would we map the following model:
 
 ![](images/reification.png)
 
@@ -114,6 +114,6 @@ ex:rel1 a rdf:Statement;
 ### Identifier to URI
 The example above used human-readable URI's for the example resources (`ex:AC1`, `ex:AC2`, `ex:DO1` and `ex:rel1`). The actual mapping uses the original identifier from the XML file. As these identifiers are UUID's, a standard mapping is available to create URI's (more specific: URN's) from these UUID's.
 
-> `<element identifier="93bf197b-5a00-4b44-856c-2638ae4e30fd">` is mapped to `<urn:uuid:id-93bf197b-5a00-4b44-856c-2638ae4e30fd>`
+> `<element identifier="93bf197b-5a00-4b44-856c-2638ae4e30fd">` is mapped to `<urn:uuid:93bf197b-5a00-4b44-856c-2638ae4e30fd>`
 
 It could be argued that we should use URL's instead of URN's. The converter might have an option to mint such URI's. At this moment, we've sticked with the more straightforward mapping from UUID to URN.
