@@ -3,6 +3,15 @@ Translating the ArchiMate Model Exchange File Format to RDF
 
 The Open Group has published the ArchiMate Model Exchange File format - a standard file format for the exchange of ArchiMate models between different tools. Resources can be found at: https://www.opengroup.org/open-group-archimate-model-exchange-file-format
 
+The aim for this project, archimate2rdf, is to create a translator that fully translates a ArchiMate exchange file to a corresponding OWL ontology.
+
+Current status:
+- It works :-)
+- All properties and relationships are translated, even relationships from or to relationships (Archimate 3.0)
+- Only model elements and relationships are translated, diagrams are currently not supported;
+- Properties are not supported;
+- Target ontology is work-in-progress, some design decisions are not final, comments are welcomed!
+
 ## Usage
 
 Build, or download [archimate2rdf.jar](https://github.com/bp4mc2/archimate2rdf/releases/download/v0.1.0/archimate2rdf.jar)
