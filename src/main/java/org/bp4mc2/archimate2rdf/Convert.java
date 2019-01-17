@@ -1,8 +1,12 @@
 package org.bp4mc2.archimate2rdf;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.riot.RDFDataMgr;
+import org.apache.jena.riot.RDFFormat;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -34,7 +38,11 @@ public class Convert {
         File inputFile = new File("data/archimate3_Model.xsd");
         File outputFile = new File("data/archimate.ttl");
         try {
+          //Transform to ttl
           XmlEngine.transform(new StreamSource(inputFile), "xsl/xsd2owl.xsl",new StreamResult(outputFile));
+          //Transform original outputFile to different formats
+          Model model = RDFDataMgr.loadModel("data/archimate.ttl");
+          RDFDataMgr.write(new FileOutputStream("data/archimate.json"),model, RDFFormat.JSONLD_COMPACT_PRETTY);
           LOG.info("Done!");
         }
         catch (Exception e) {

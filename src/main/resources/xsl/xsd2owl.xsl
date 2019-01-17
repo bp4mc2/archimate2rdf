@@ -19,8 +19,8 @@
 <xsl:output method="text" indent="no"/>
 
 <xsl:template match="*" mode="prefix">
-  <xsl:text>prefix </xsl:text><xsl:value-of select="local-name()"/><xsl:text>: </xsl:text>
-  <xsl:text>&lt;</xsl:text><xsl:value-of select="."/><xsl:text>&gt;
+  <xsl:text>@prefix </xsl:text><xsl:value-of select="local-name()"/><xsl:text>: </xsl:text>
+  <xsl:text>&lt;</xsl:text><xsl:value-of select="."/><xsl:text>&gt;.
 </xsl:text>
 </xsl:template>
 
@@ -42,6 +42,7 @@
   <xsl:for-each select="xs:schema/xs:complexType[xs:complexContent/xs:extension/@base='RealElementType']">
     <xsl:text>archimate:</xsl:text><xsl:value-of select="@name"/>
     <xsl:text> a owl:Class;
+  rdfs:isDefinedBy &lt;http://bp4mc2.org/def/archimate&gt;;
 </xsl:text>
     <xsl:text>  rdfs:label "</xsl:text><xsl:value-of select="@name"/><xsl:text>"@en;
 .
@@ -58,19 +59,23 @@
 </xsl:text>
   </xsl:for-each>
 	<xsl:text>archimate:readAccess a owl:ObjectProperty;
-	rdfs:subPropertyOf archimate:access;
+  rdfs:isDefinedBy &lt;http://bp4mc2.org/def/archimate&gt;;
+  rdfs:subPropertyOf archimate:access;
   rdfs:label "readAccess"@en;
 .
 archimate:writeAccess a owl:ObjectProperty;
+  rdfs:isDefinedBy &lt;http://bp4mc2.org/def/archimate&gt;;
   rdfs:subPropertyOf archimate:access;
   rdfs:label "writeAccess"@en;
 .
 archimate:readWriteAccess a owl:ObjectProperty;
+  rdfs:isDefinedBy &lt;http://bp4mc2.org/def/archimate&gt;;
   rdfs:subPropertyOf archimate:access;
   rdfs:label "readWriteAccess"@en;
 .
 archimate:property a owl:DatatypeProperty;
-	rdfs:label "property";
+  rdfs:isDefinedBy &lt;http://bp4mc2.org/def/archimate&gt;;
+  rdfs:label "property";
 .
 </xsl:text>
 </xsl:template>
