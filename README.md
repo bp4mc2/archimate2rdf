@@ -7,10 +7,11 @@ The aim for this project, archimate2rdf, is to create a translator that fully tr
 
 Current status:
 - It works :-)
-- All properties and relationships are translated, even relationships from or to relationships (Archimate 3.0)
+- All standard and custom properties and relationships are translated, even relationships from or to relationships (Archimate 3.0)
 - Only model elements and relationships are translated, diagrams are currently not supported;
-- Properties are not supported;
 - Target ontology is work-in-progress, some design decisions are not final, comments are welcomed!
+
+We expect the ontology to change. Our current focus is the creation of a complete translator. This means that the current ontology is as close to the XSD as possible, focussing on simplicity. The ontology doesn't contain any "knowledge" about the ArchiMate language that is not available in the XSD (the ontology is actually generated from the XSD at this moment!). We expect that the final ontology will have a more semantic orientation.
 
 ## Usage
 
@@ -131,3 +132,21 @@ The example above used human-readable URI's for the example resources (`ex:AC1`,
 > `<element identifier="93bf197b-5a00-4b44-856c-2638ae4e30fd">` is mapped to `<urn:uuid:93bf197b-5a00-4b44-856c-2638ae4e30fd>`
 
 It could be argued that we should use URL's instead of URN's. The converter might have an option to mint such URI's. At this moment, we've sticked with the more straightforward mapping from UUID to URN.
+
+### Custom properties to new properties
+Custom properties are mapped to new properties. This means that adding custom properties to the model will extend the ArchiMate ontology. The URI's for these properties are created from the identifier of the propertydefinition and the name of the model:
+
+> `<property propertyDefinitionRef="propid-1">` is mapped to `<http://bp4mc2.org/archimate/my-model/property/propid-1> rdfs:subClassOf archimate:property.`
+> (With "My model" being the name of this specific model)
+
+From this, the actual use of such a property can be mapped to this newly created property:
+
+> `<property propertyDefinitionRef="propid-1">`
+> `  <value xml:lang="en">Active Structure</value>`
+> `</property>`
+> is mapped to
+> `@prefix property: <http://bp4mc2.org/archimate/my-model/property/>.`
+> `[] property:propid-1 "Active Structure."`
+> (where `[]` should be replaced with the URI of the specific model element)
+
+It could be argued that we shouldn't use the identifier of the property, but the more readable label of the property. Because this would add more complexity to the translator, we have not done that (yet).

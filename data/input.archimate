@@ -19,7 +19,11 @@
     <element xsi:type="archimate:Product" name="Product" id="39a76f12-8045-4e8f-8eba-83743bbae4aa"/>
   </folder>
   <folder name="Application" id="66ad5373-5c4d-4aef-96ce-0f7702d7ccce" type="application">
-    <element xsi:type="archimate:ApplicationComponent" name="Application Component" id="0d53f530-018a-4064-b6ab-4dadd57a6f7c"/>
+    <element xsi:type="archimate:ApplicationComponent" name="Application Component" id="0d53f530-018a-4064-b6ab-4dadd57a6f7c">
+      <property key="Category" value="Active Structure"/>
+      <property key="Some examples" value="CRM System"/>
+      <property key="Some examples" value="Web portal"/>
+    </element>
     <element xsi:type="archimate:ApplicationCollaboration" name="Application Collaboration" id="7833e962-c0ba-4e5f-a92e-eb072c3d7870"/>
     <element xsi:type="archimate:ApplicationInterface" name="Application Interface" id="e30ea613-d881-4792-b7f5-9d3d4eb2a3f5"/>
     <element xsi:type="archimate:ApplicationFunction" name="Application Function" id="c6084cb6-b5b7-4836-bc91-58627a06c725"/>
@@ -42,7 +46,9 @@
     <element xsi:type="archimate:TriggeringRelationship" id="66109e59-a4eb-4c3f-b9f0-475a1d281466" source="93bf197b-5a00-4b44-856c-2638ae4e30fd" target="641ed077-766e-49e0-9f9b-f0b0270c1887"/>
     <element xsi:type="archimate:FlowRelationship" id="952c7e99-9798-4507-95f4-651be02388f8" source="93bf197b-5a00-4b44-856c-2638ae4e30fd" target="641ed077-766e-49e0-9f9b-f0b0270c1887"/>
     <element xsi:type="archimate:AssociationRelationship" id="e3a09168-85b8-4673-bc7c-6d60bfa29245" source="93bf197b-5a00-4b44-856c-2638ae4e30fd" target="641ed077-766e-49e0-9f9b-f0b0270c1887"/>
-    <element xsi:type="archimate:AccessRelationship" id="f400a51b-01b2-43fa-88fb-0d203051dfa0" source="0d53f530-018a-4064-b6ab-4dadd57a6f7c" target="3ae9ea00-aa1e-4269-bd5f-10860d986643" accessType="3"/>
+    <element xsi:type="archimate:AccessRelationship" id="f400a51b-01b2-43fa-88fb-0d203051dfa0" source="0d53f530-018a-4064-b6ab-4dadd57a6f7c" target="3ae9ea00-aa1e-4269-bd5f-10860d986643" accessType="3">
+      <property key="Category" value="Structural"/>
+    </element>
     <element xsi:type="archimate:AssociationRelationship" name="association" id="00846db0-f793-47d0-845b-f8c171ba6f8a" source="3ae9ea00-aa1e-4269-bd5f-10860d986643" target="3ae9ea00-aa1e-4269-bd5f-10860d986643">
       <documentation>The Association relationship models a relationship between objects that is not covered by another, more specific relationship.</documentation>
     </element>

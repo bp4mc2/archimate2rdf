@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
          xmlns:archimate="http://bp4mc2.org/def/archimate#">
+   <owl:DatatypeProperty rdf:about="http://bp4mc2.org/archimate/input/propid-1">
+      <rdfs:label>Category</rdfs:label>
+   </owl:DatatypeProperty>
+   <owl:DatatypeProperty rdf:about="http://bp4mc2.org/archimate/input/propid-2">
+      <rdfs:label>Some examples</rdfs:label>
+   </owl:DatatypeProperty>
    <archimate:BusinessActor rdf:about="urn:uuid:id-93bf197b-5a00-4b44-856c-2638ae4e30fd">
       <rdfs:label xml:lang="en">Business Actor</rdfs:label>
       <rdfs:comment xml:lang="en">A Business Actor is defined as an entity that performs behaviour in an organisation such as business processes or functions.</rdfs:comment>
@@ -52,6 +59,9 @@
    </archimate:Product>
    <archimate:ApplicationComponent rdf:about="urn:uuid:id-0d53f530-018a-4064-b6ab-4dadd57a6f7c">
       <rdfs:label xml:lang="en">Application Component</rdfs:label>
+      <property:propid-1 xmlns:property="http://bp4mc2.org/archimate/input/" xml:lang="en">Active Structure</property:propid-1>
+      <property:propid-2 xmlns:property="http://bp4mc2.org/archimate/input/" xml:lang="en">CRM System</property:propid-2>
+      <property:propid-2 xmlns:property="http://bp4mc2.org/archimate/input/" xml:lang="en">Web portal</property:propid-2>
       <archimate:readWriteAccess rdf:resource="urn:uuid:id-3ae9ea00-aa1e-4269-bd5f-10860d986643"/>
    </archimate:ApplicationComponent>
    <archimate:ApplicationCollaboration rdf:about="urn:uuid:id-7833e962-c0ba-4e5f-a92e-eb072c3d7870">
@@ -89,6 +99,12 @@
    <archimate:DataObject rdf:about="urn:uuid:id-481ac5f3-89c6-4f16-b6d4-de42b52fedc7">
       <rdfs:label xml:lang="en">Message</rdfs:label>
    </archimate:DataObject>
+   <rdf:Statement rdf:about="urn:uuid:id-f400a51b-01b2-43fa-88fb-0d203051dfa0">
+      <rdf:subject rdf:resource="urn:uuid:id-0d53f530-018a-4064-b6ab-4dadd57a6f7c"/>
+      <rdf:object rdf:resource="urn:uuid:id-3ae9ea00-aa1e-4269-bd5f-10860d986643"/>
+      <rdf:predicate rdf:resource="http://bp4mc2.org/def/archimate#readWriteAccess"/>
+      <property:propid-1 xmlns:property="http://bp4mc2.org/archimate/input/" xml:lang="en">Structural</property:propid-1>
+   </rdf:Statement>
    <rdf:Statement rdf:about="urn:uuid:id-00846db0-f793-47d0-845b-f8c171ba6f8a">
       <rdf:subject rdf:resource="urn:uuid:id-3ae9ea00-aa1e-4269-bd5f-10860d986643"/>
       <rdf:object rdf:resource="urn:uuid:id-3ae9ea00-aa1e-4269-bd5f-10860d986643"/>

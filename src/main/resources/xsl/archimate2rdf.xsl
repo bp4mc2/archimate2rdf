@@ -4,6 +4,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
   xmlns:amef="http://www.opengroup.org/xsd/archimate/3.0/"
   xmlns:archimate="http://bp4mc2.org/def/archimate#"
 
@@ -12,6 +13,7 @@
 
 <xsl:output method="xml" indent="yes"/>
 
+<xsl:variable name="archimatens">http://bp4mc2.org/archimate/</xsl:variable>
 <xsl:variable name="archimateprefix">http://bp4mc2.org/def/archimate#</xsl:variable>
 
 <xsl:key name="rel" match="/amef:model/amef:relationships/amef:relationship" use="@source"/>
@@ -32,7 +34,18 @@
 </xsl:template>
 
 <xsl:template match="/">
+	<xsl:variable name="context">
+		<xsl:value-of select="$archimatens"/>
+		<xsl:value-of select="lower-case(replace(amef:model/amef:name,' ','-'))"/>
+	</xsl:variable>
   <rdf:RDF>
+		<xsl:for-each select="amef:model/amef:propertyDefinitions/amef:propertyDefinition">
+			<owl:DatatypeProperty rdf:about="{$context}/{@identifier}">
+				<xsl:for-each select="amef:name">
+          <rdfs:label><xsl:apply-templates select="." mode="languagenode"/></rdfs:label>
+        </xsl:for-each>
+			</owl:DatatypeProperty>
+		</xsl:for-each>
     <xsl:for-each select="amef:model/amef:elements/amef:element">
       <xsl:element name="archimate:{@xsi:type}">
         <xsl:attribute name="rdf:about">urn:uuid:<xsl:value-of select="@identifier"/></xsl:attribute>
@@ -42,6 +55,11 @@
         <xsl:for-each select="amef:documentation">
           <rdfs:comment><xsl:apply-templates select="." mode="languagenode"/></rdfs:comment>
         </xsl:for-each>
+				<xsl:for-each select="amef:properties/amef:property">
+					<xsl:element name="property:{@propertyDefinitionRef}" namespace="{$context}/">
+						<xsl:apply-templates select="amef:value" mode="languagenode"/>
+					</xsl:element>
+				</xsl:for-each>
         <xsl:for-each select="key('rel',@identifier)">
           <xsl:variable name="name"><xsl:apply-templates select="." mode="relname"/></xsl:variable>
           <xsl:element name="archimate:{$name}">
@@ -62,6 +80,11 @@
         <xsl:for-each select="amef:documentation">
           <rdfs:comment><xsl:apply-templates select="." mode="languagenode"/></rdfs:comment>
         </xsl:for-each>
+				<xsl:for-each select="amef:properties/amef:property">
+					<xsl:element name="property:{@propertyDefinitionRef}" namespace="{$context}/">
+						<xsl:apply-templates select="amef:value" mode="languagenode"/>
+					</xsl:element>
+				</xsl:for-each>
         <xsl:for-each select="key('rel',@identifier)">
           <xsl:variable name="name"><xsl:apply-templates select="." mode="relname"/></xsl:variable>
           <xsl:element name="archimate:{$name}">

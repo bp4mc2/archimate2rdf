@@ -69,6 +69,9 @@ archimate:readWriteAccess a owl:ObjectProperty;
   rdfs:subPropertyOf archimate:access;
   rdfs:label "readWriteAccess"@en;
 .
+archimate:property a owl:DatatypeProperty;
+	rdfs:label "property";
+.
 </xsl:text>
 </xsl:template>
 

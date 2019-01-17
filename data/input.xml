@@ -44,6 +44,17 @@
     </element>
     <element identifier="id-0d53f530-018a-4064-b6ab-4dadd57a6f7c" xsi:type="ApplicationComponent">
       <name xml:lang="en">Application Component</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1">
+          <value xml:lang="en">Active Structure</value>
+        </property>
+        <property propertyDefinitionRef="propid-2">
+          <value xml:lang="en">CRM System</value>
+        </property>
+        <property propertyDefinitionRef="propid-2">
+          <value xml:lang="en">Web portal</value>
+        </property>
+      </properties>
     </element>
     <element identifier="id-7833e962-c0ba-4e5f-a92e-eb072c3d7870" xsi:type="ApplicationCollaboration">
       <name xml:lang="en">Application Collaboration</name>
@@ -85,7 +96,13 @@
     <relationship identifier="id-66109e59-a4eb-4c3f-b9f0-475a1d281466" source="id-93bf197b-5a00-4b44-856c-2638ae4e30fd" target="id-641ed077-766e-49e0-9f9b-f0b0270c1887" xsi:type="Triggering" />
     <relationship identifier="id-952c7e99-9798-4507-95f4-651be02388f8" source="id-93bf197b-5a00-4b44-856c-2638ae4e30fd" target="id-641ed077-766e-49e0-9f9b-f0b0270c1887" xsi:type="Flow" />
     <relationship identifier="id-e3a09168-85b8-4673-bc7c-6d60bfa29245" source="id-93bf197b-5a00-4b44-856c-2638ae4e30fd" target="id-641ed077-766e-49e0-9f9b-f0b0270c1887" xsi:type="Association" />
-    <relationship identifier="id-f400a51b-01b2-43fa-88fb-0d203051dfa0" source="id-0d53f530-018a-4064-b6ab-4dadd57a6f7c" target="id-3ae9ea00-aa1e-4269-bd5f-10860d986643" xsi:type="Access" accessType="ReadWrite" />
+    <relationship identifier="id-f400a51b-01b2-43fa-88fb-0d203051dfa0" source="id-0d53f530-018a-4064-b6ab-4dadd57a6f7c" target="id-3ae9ea00-aa1e-4269-bd5f-10860d986643" xsi:type="Access" accessType="ReadWrite">
+      <properties>
+        <property propertyDefinitionRef="propid-1">
+          <value xml:lang="en">Structural</value>
+        </property>
+      </properties>
+    </relationship>
     <relationship identifier="id-00846db0-f793-47d0-845b-f8c171ba6f8a" source="id-3ae9ea00-aa1e-4269-bd5f-10860d986643" target="id-3ae9ea00-aa1e-4269-bd5f-10860d986643" xsi:type="Association">
       <name xml:lang="en">association</name>
       <documentation xml:lang="en">The Association relationship models a relationship between objects that is not covered by another, more specific relationship.</documentation>
@@ -97,6 +114,14 @@
     <relationship identifier="id-058e13ea-e979-4d35-a780-f798ff8b3871" source="id-4bcf2887-021d-4d81-b6eb-38167c858854" target="id-12b25a36-1bba-4477-a575-fa38ab77b91a" xsi:type="Flow" />
     <relationship identifier="id-a54a2905-07e2-47f7-a085-ec255863b5fa" source="id-058e13ea-e979-4d35-a780-f798ff8b3871" target="id-481ac5f3-89c6-4f16-b6d4-de42b52fedc7" xsi:type="Association" />
   </relationships>
+  <propertyDefinitions>
+    <propertyDefinition identifier="propid-1" type="string">
+      <name>Category</name>
+    </propertyDefinition>
+    <propertyDefinition identifier="propid-2" type="string">
+      <name>Some examples</name>
+    </propertyDefinition>
+  </propertyDefinitions>
   <views>
     <diagrams>
       <view identifier="id-bdc1bbcf-02b8-4130-8068-27090582e4da" xsi:type="Diagram">
