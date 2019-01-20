@@ -16,17 +16,28 @@ public class Convert {
 
   public static void main(String[] args) {
 
-    if (args.length == 2) {
+    if ((args.length == 2) || (args.length == 3)) {
 
       LOG.info("Starting conversion");
-      LOG.info("Input file: {}",args[0]);
-      LOG.info("Ouput file: {}",args[1]);
+      LOG.info("Input file:  {}",args[0]);
+      LOG.info("Output file: {}",args[1]);
+      if (args.length == 3) {
+        LOG.info("Stylesheet:  {}",args[2]);
+      }
 
       File inputFile = new File(args[0]);
       File outputFile = new File(args[1]);
+      File stylesheetFile = null;
+      if (args.length == 3) {
+        stylesheetFile = new File(args[2]);
+      }
 
       try {
-        XmlEngine.transform(new StreamSource(inputFile), "xsl/archimate2rdf.xsl",new StreamResult(outputFile));
+        if (stylesheetFile != null) {
+          XmlEngine.transform(new StreamSource(inputFile),new StreamSource(stylesheetFile),new StreamResult(outputFile));
+        } else {
+          XmlEngine.transform(new StreamSource(inputFile),"xsl/archimate2rdf.xsl",new StreamResult(outputFile));
+        }
         LOG.info("Done!");
       }
       catch (Exception e) {

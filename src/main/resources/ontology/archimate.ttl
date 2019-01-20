@@ -1,177 +1,234 @@
-prefix archimate: <http://bp4mc2.org/def/archimate#>
-prefix owl: <http://www.w3.org/2002/07/owl#>
-prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+@prefix archimate: <http://bp4mc2.org/def/archimate#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 
 # Classes
 archimate:BusinessActor a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "BusinessActor"@en;
 .
 archimate:BusinessRole a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "BusinessRole"@en;
 .
 archimate:BusinessCollaboration a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "BusinessCollaboration"@en;
 .
 archimate:BusinessInterface a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "BusinessInterface"@en;
 .
 archimate:BusinessProcess a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "BusinessProcess"@en;
 .
 archimate:BusinessFunction a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "BusinessFunction"@en;
 .
 archimate:BusinessInteraction a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "BusinessInteraction"@en;
 .
 archimate:BusinessEvent a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "BusinessEvent"@en;
 .
 archimate:BusinessService a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "BusinessService"@en;
 .
 archimate:BusinessObject a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "BusinessObject"@en;
 .
 archimate:Contract a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "Contract"@en;
 .
 archimate:Representation a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "Representation"@en;
 .
 archimate:Product a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "Product"@en;
 .
 archimate:ApplicationComponent a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "ApplicationComponent"@en;
 .
 archimate:ApplicationCollaboration a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "ApplicationCollaboration"@en;
 .
 archimate:ApplicationInterface a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "ApplicationInterface"@en;
 .
 archimate:ApplicationFunction a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "ApplicationFunction"@en;
 .
 archimate:ApplicationInteraction a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "ApplicationInteraction"@en;
 .
 archimate:ApplicationProcess a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "ApplicationProcess"@en;
 .
 archimate:ApplicationEvent a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "ApplicationEvent"@en;
 .
 archimate:ApplicationService a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "ApplicationService"@en;
 .
 archimate:DataObject a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "DataObject"@en;
 .
 archimate:Node a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "Node"@en;
 .
 archimate:Device a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "Device"@en;
 .
 archimate:SystemSoftware a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "SystemSoftware"@en;
 .
 archimate:TechnologyCollaboration a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "TechnologyCollaboration"@en;
 .
 archimate:TechnologyInterface a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "TechnologyInterface"@en;
 .
 archimate:Path a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "Path"@en;
 .
 archimate:CommunicationNetwork a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "CommunicationNetwork"@en;
 .
 archimate:TechnologyFunction a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "TechnologyFunction"@en;
 .
 archimate:TechnologyProcess a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "TechnologyProcess"@en;
 .
 archimate:TechnologyInteraction a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "TechnologyInteraction"@en;
 .
 archimate:TechnologyEvent a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "TechnologyEvent"@en;
 .
 archimate:TechnologyService a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "TechnologyService"@en;
 .
 archimate:Artifact a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "Artifact"@en;
 .
 archimate:Equipment a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "Equipment"@en;
 .
 archimate:Facility a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "Facility"@en;
 .
 archimate:DistributionNetwork a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "DistributionNetwork"@en;
 .
 archimate:Material a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "Material"@en;
 .
 archimate:Stakeholder a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "Stakeholder"@en;
 .
 archimate:Driver a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "Driver"@en;
 .
 archimate:Assessment a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "Assessment"@en;
 .
 archimate:Goal a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "Goal"@en;
 .
 archimate:Outcome a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "Outcome"@en;
 .
 archimate:Principle a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "Principle"@en;
 .
 archimate:Requirement a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "Requirement"@en;
 .
 archimate:Constraint a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "Constraint"@en;
 .
 archimate:Meaning a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "Meaning"@en;
 .
 archimate:Value a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "Value"@en;
 .
 archimate:Resource a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "Resource"@en;
 .
 archimate:Capability a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "Capability"@en;
 .
 archimate:CourseOfAction a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "CourseOfAction"@en;
 .
 archimate:WorkPackage a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "WorkPackage"@en;
 .
 archimate:Deliverable a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "Deliverable"@en;
 .
 archimate:ImplementationEvent a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "ImplementationEvent"@en;
 .
 archimate:Plateau a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "Plateau"@en;
 .
 archimate:Gap a owl:Class;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:label "Gap"@en;
 .
 # Properties
@@ -209,17 +266,21 @@ archimate:association a owl:ObjectProperty;
   rdfs:label "association"@en;
 .
 archimate:readAccess a owl:ObjectProperty;
-	rdfs:subPropertyOf archimate:access;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
+  rdfs:subPropertyOf archimate:access;
   rdfs:label "readAccess"@en;
 .
 archimate:writeAccess a owl:ObjectProperty;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:subPropertyOf archimate:access;
   rdfs:label "writeAccess"@en;
 .
 archimate:readWriteAccess a owl:ObjectProperty;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
   rdfs:subPropertyOf archimate:access;
   rdfs:label "readWriteAccess"@en;
 .
 archimate:property a owl:DatatypeProperty;
-	rdfs:label "property";
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate>;
+  rdfs:label "property";
 .

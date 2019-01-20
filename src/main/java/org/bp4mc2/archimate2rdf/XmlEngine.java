@@ -21,6 +21,13 @@ public class XmlEngine {
 
   }
 
+  public static void transform(StreamSource source, StreamSource stylesheet, StreamResult result)
+      throws TransformerConfigurationException,TransformerException {
+
+    transform(source,stylesheet,result,null);
+
+  }
+
   public static void transform(StreamSource source, String xslResource, StreamResult result,
       Object input) throws TransformerConfigurationException,TransformerException {
 
@@ -33,8 +40,14 @@ public class XmlEngine {
     // Create input stream for the actual resource
     InputStream xslStream = XmlEngine.class.getClassLoader().getResourceAsStream(xslResource);
 
+    transform(source,new StreamSource(xslStream),result,input);
+  }
+
+  public static void transform(StreamSource source, StreamSource stylesheet, StreamResult result,
+      Object input) throws TransformerConfigurationException,TransformerException {
+
     // Create a transformer for the stylesheet.
-    Transformer transformer = tfactory.newTransformer(new StreamSource(xslStream));
+    Transformer transformer = tfactory.newTransformer(stylesheet);
 
     // Set parameter, if any
     if (input != null) {
