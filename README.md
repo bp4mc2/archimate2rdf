@@ -21,7 +21,7 @@ Build, or download [archimate2rdf.jar](https://github.com/bp4mc2/archimate2rdf/r
 
 ## Ontology
 
-The ontology we use can be found here: http://bp4mc2.org/def/archimate
+The ontology we use can be found here: https://bp4mc2.org/def/archimate
 
 Unfortunately, no official archimate ontology exists. Different initiatives have been undertaken (listed below - as far as we know), but all these initiatives have in fact only a transformation goal. And for that, you need a target ontology! Our own target ontology is nothing better: something we need to translate a particular archimate exchange file to. Interchange of RDF archimate files will only be possible if we all agree upon one, canonical, ArchiMate ontology.
 
