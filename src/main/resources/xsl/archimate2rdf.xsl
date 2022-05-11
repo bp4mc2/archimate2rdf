@@ -74,16 +74,25 @@
         <xsl:for-each select="key('rel',@identifier)">
           <xsl:variable name="name"><xsl:apply-templates select="." mode="relname"/></xsl:variable>
           <xsl:element name="archimate:{$name}">
-            <xsl:attribute name="rdf:resource">urn:uuid:<xsl:value-of select="@target"/></xsl:attribute>
+            <xsl:attribute name="rdf:resource"><xsl:value-of select="archimate:URI-minter($context, //*[@identifier=current()/@target])" /> </xsl:attribute>
           </xsl:element>
         </xsl:for-each>
       </xsl:element>
     </xsl:for-each>
     <xsl:for-each select="amef:model/amef:relationships/amef:relationship[exists(*) or exists(key('rel',@identifier)) or exists(key('relinv',@identifier))]">
       <xsl:variable name="name"><xsl:apply-templates select="." mode="relname"/></xsl:variable>
-      <rdf:Statement rdf:about="urn:uuid:{@identifier}">
-        <rdf:subject rdf:resource="urn:uuid:{@source}"/>
-        <rdf:object rdf:resource="urn:uuid:{@target}"/>
+      <rdf:Statement>
+        <xsl:attribute name="rdf:about"><xsl:value-of select="archimate:URI-minter($context, .)" /></xsl:attribute>        
+        <rdf:subject>
+          <xsl:attribute name="rdf:resource">           
+            <xsl:value-of select="archimate:URI-minter($context, //*[@identifier=current()/@source])" />            
+          </xsl:attribute>
+        </rdf:subject>              
+        <rdf:object>
+          <xsl:attribute name="rdf:resource">           
+            <xsl:value-of select="archimate:URI-minter($context, //*[@identifier=current()/@target])" />            
+          </xsl:attribute>  
+        </rdf:object>
         <rdf:predicate rdf:resource="{$archimateprefix}{$name}"/>
         <xsl:for-each select="amef:name">
           <rdfs:label><xsl:apply-templates select="." mode="languagenode"/></rdfs:label>
@@ -99,7 +108,7 @@
         <xsl:for-each select="key('rel',@identifier)">
           <xsl:variable name="name"><xsl:apply-templates select="." mode="relname"/></xsl:variable>
           <xsl:element name="archimate:{$name}">
-            <xsl:attribute name="rdf:resource">urn:uuid:<xsl:value-of select="@target"/></xsl:attribute>
+            <xsl:attribute name="rdf:resource"><xsl:value-of select="archimate:URI-minter($context, //*[@identifier=current()/@target])" /></xsl:attribute>
           </xsl:element>
         </xsl:for-each>
       </rdf:Statement>
