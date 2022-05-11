@@ -3,3 +3,5 @@ data/*.xsd
 data/*.ttl
 data/*.bak
 data/*.json
+.vscode/settings.json
+archimate2rdf.jar
