@@ -15,6 +15,17 @@
 
 <xsl:variable name="archimatens">http://bp4mc2.org/archimate/</xsl:variable>
 <xsl:variable name="archimateprefix">http://bp4mc2.org/def/archimate#</xsl:variable>
+<xsl:param name="args"/>
+<xsl:variable name="domain">
+  <xsl:choose>
+    <xsl:when test="$args != ''">
+        <xsl:value-of select="$args " />
+    </xsl:when>
+    <xsl:otherwise>
+        <xsl:value-of select="$archimatens" />
+    </xsl:otherwise>
+  </xsl:choose>
+</xsl:variable>
 
 <xsl:key name="rel" match="/amef:model/amef:relationships/amef:relationship" use="@source"/>
 <xsl:key name="relinv" match="/amef:model/amef:relationships/amef:relationship" use="@target"/>
@@ -34,8 +45,8 @@
 </xsl:template>
 
 <xsl:template match="/">
-	<xsl:variable name="context">
-		<xsl:value-of select="$archimatens"/>
+	<xsl:variable name="context">		
+    <xsl:value-of select="$domain"/>    
 		<xsl:value-of select="lower-case(replace(amef:model/amef:name,' ','-'))"/>
 	</xsl:variable>
   <rdf:RDF>
@@ -48,7 +59,7 @@
 		</xsl:for-each>
     <xsl:for-each select="amef:model/amef:elements/amef:element">
       <xsl:element name="archimate:{@xsi:type}">
-        <xsl:attribute name="rdf:about">urn:uuid:<xsl:value-of select="@identifier"/></xsl:attribute>
+        <xsl:attribute name="rdf:about"><xsl:value-of select="archimate:URI-minter($context, .)" /></xsl:attribute>
         <xsl:for-each select="amef:name">
           <rdfs:label><xsl:apply-templates select="." mode="languagenode"/></rdfs:label>
         </xsl:for-each>
@@ -95,5 +106,13 @@
     </xsl:for-each>
   </rdf:RDF>
 </xsl:template>
+
+<xsl:function name="archimate:URI-minter" as="xs:string">
+  <!--<xsl:param name="elementId" as="xs:string"/>-->
+  <xsl:param name="domain" as="xs:string"/>
+  <xsl:param name="element" as="node()"/>
+  <xsl:value-of select="concat($domain, '/id/',  $element/@xsi:type, '/', $element/@identifier)" />
+  <!--<xsl:value-of select="concat('http://example.org/', $elementId)" />-->
+</xsl:function>
 
 </xsl:stylesheet>

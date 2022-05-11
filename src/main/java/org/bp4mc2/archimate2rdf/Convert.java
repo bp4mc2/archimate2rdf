@@ -20,23 +20,27 @@ public class Convert {
 
       LOG.info("Starting conversion");
       LOG.info("Input file:  {}",args[0]);
-      LOG.info("Output file: {}",args[1]);
-      if (args.length == 3) {
-        LOG.info("Stylesheet:  {}",args[2]);
-      }
+      LOG.info("Output file: {}",args[1]);      
 
       File inputFile = new File(args[0]);
       File outputFile = new File(args[1]);
       File stylesheetFile = null;
+      String domain = null;
       if (args.length == 3) {
-        stylesheetFile = new File(args[2]);
+        if(args[2].startsWith("domain=")) {
+          domain = args[2].substring(7);
+          LOG.info("Domain:  {}",domain);
+        } else {
+          stylesheetFile = new File(args[2]);
+          LOG.info("Stylesheet:  {}",args[2]);
+        }
       }
 
       try {
         if (stylesheetFile != null) {
           XmlEngine.transform(new StreamSource(inputFile),new StreamSource(stylesheetFile),new StreamResult(outputFile));
         } else {
-          XmlEngine.transform(new StreamSource(inputFile),"xsl/archimate2rdf.xsl",new StreamResult(outputFile));
+          XmlEngine.transform(new StreamSource(inputFile),"xsl/archimate2rdf.xsl",new StreamResult(outputFile), domain);
         }
         LOG.info("Done!");
       }
