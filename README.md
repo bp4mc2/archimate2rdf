@@ -134,11 +134,11 @@ The example above used human-readable URIs for the example resources (`ex:AC1`, 
 where `{context}` consists of a domain (here: http://bp4mc2.org/archimate/) and the name of the ArchiMate model (here: input).
 
 The domain to be used as part of the URI can be configured by providing an additional input parameter:
-> ``java -jar archimate2rdf.jar <input.xml> <output.xml> domain=http://example.org/`
+> `java -jar archimate2rdf.jar <input.xml> <output.xml> domain=http://example.org/`
 
-This can be used to create [dereferenceable URIs](https://www.w3.org/TR/ld-glossary/#dereferenceable-uris)
+This can be used to create [dereferenceable URIs](https://www.w3.org/TR/ld-glossary/#dereferenceable-uris).
 
-If no such parameter is provided, the default domain `http://bp4mc2.org/archimate/` is used.
+If no such domain parameter is provided, the default domain `http://bp4mc2.org/archimate/` is used.
 
 ### Custom properties to new properties
 Custom properties are mapped to new properties. This means that adding custom properties to the model will extend the ArchiMate ontology. The URI's for these properties are created from the identifier of the propertydefinition and the name of the model:
