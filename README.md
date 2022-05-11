@@ -127,11 +127,18 @@ ex:rel1 a rdf:Statement;
 ```
 
 ### Identifier to URI
-The example above used human-readable URI's for the example resources (`ex:AC1`, `ex:AC2`, `ex:DO1` and `ex:rel1`). The actual mapping uses the original identifier from the XML file. As these identifiers are UUID's, a standard mapping is available to create URI's (more specific: URN's) from these UUID's.
+The example above used human-readable URIs for the example resources (`ex:AC1`, `ex:AC2`, `ex:DO1` and `ex:rel1`). The actual mapping uses the original identifier from the XML file. For every resource a URI is generated that conforms to the following format:
 
-> `<element identifier="93bf197b-5a00-4b44-856c-2638ae4e30fd">` is mapped to `<urn:uuid:93bf197b-5a00-4b44-856c-2638ae4e30fd>`
+> `http://{context}/id/{type}/{identifier}`, for instance `http://bp4mc2.org/archimate/input/id/BusinessActor/id-93bf197b-5a00-4b44-856c-2638ae4e30fd`
 
-It could be argued that we should use URL's instead of URN's. The converter might have an option to mint such URI's. At this moment, we've sticked with the more straightforward mapping from UUID to URN.
+where `{context}` consists of a domain (here: http://bp4mc2.org/archimate/) and the name of the ArchiMate model (here: input).
+
+The domain to be used as part of the URI can be configured by providing an additional input parameter:
+> ``java -jar archimate2rdf.jar <input.xml> <output.xml> domain=http://example.org/`
+
+This can be used to create [dereferenceable URIs](https://www.w3.org/TR/ld-glossary/#dereferenceable-uris)
+
+If no such parameter is provided, the default domain `http://bp4mc2.org/archimate/` is used.
 
 ### Custom properties to new properties
 Custom properties are mapped to new properties. This means that adding custom properties to the model will extend the ArchiMate ontology. The URI's for these properties are created from the identifier of the propertydefinition and the name of the model:
