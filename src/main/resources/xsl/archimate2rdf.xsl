@@ -116,12 +116,10 @@
   </rdf:RDF>
 </xsl:template>
 
-<xsl:function name="archimate:URI-minter" as="xs:string">
-  <!--<xsl:param name="elementId" as="xs:string"/>-->
+<xsl:function name="archimate:URI-minter" as="xs:string">  
   <xsl:param name="domain" as="xs:string"/>
   <xsl:param name="element" as="node()"/>
-  <xsl:value-of select="concat($domain, '/id/',  $element/@xsi:type, '/', $element/@identifier)" />
-  <!--<xsl:value-of select="concat('http://example.org/', $elementId)" />-->
+  <xsl:value-of select="concat($domain, '/id/',  $element/@xsi:type, '/', $element/@identifier)" />  
 </xsl:function>
 
 </xsl:stylesheet>
