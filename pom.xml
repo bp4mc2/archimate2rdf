@@ -12,7 +12,7 @@
 		<repository>
 			<id>enonic</id>
 			<name>Enonic Plugin Repository</name>
-			<url>http://repo.enonic.com/public/</url>
+			<url>https://repo.enonic.com/public/</url>
 		</repository>
 	</repositories>
 	<dependencies>
@@ -30,6 +30,11 @@
 		    <groupId>org.apache.jena</groupId>
 		    <artifactId>jena-arq</artifactId>
 		    <version>4.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.jena</groupId>
+			<artifactId>jena-core</artifactId>
+			<version>4.3.1</version>
 		</dependency>
 
 

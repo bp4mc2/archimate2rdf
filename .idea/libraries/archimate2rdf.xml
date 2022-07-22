@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="archimate2rdf">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/archimate2rdf.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

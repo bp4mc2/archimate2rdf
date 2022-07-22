@@ -1,7 +1,5 @@
+*.bat
 target
-data/*.xsd
-data/*.ttl
-data/*.bak
-data/*.json
+data/*.*
 .vscode/*
-archimate2rdf.jar
+.idea
