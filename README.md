@@ -180,11 +180,11 @@ It could be argued that we shouldn't use the identifier of the property, but the
 ### SKOS support
 We have added support for SKOS in the transformation. This has impact on various parts of the transformation. We summarize the most important ones below.
 
-> `<metadata>` and its properties is mapped to `skos:conceptScheme` with similar properties
+> `<metadata>` and its properties are mapped to `skos:conceptScheme` with similar properties
 
 > `<element>` is mapped to `skos:Concept`, its name to `skos:prefLabel`, its description to `skos:scopeNote`
 
-> `<relationship>` is  mapped to `archimate:Relationship` 
+> `<relationship>` is  mapped to `archimate:Relationship` (which is a new class)
 
 > `<view>` is  mapped to `skos:Concept` 
 
