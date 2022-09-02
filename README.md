@@ -32,7 +32,7 @@ Build, or download [archimate2rdf.jar](https://github.com/bp4mc2/archimate2rdf/r
 
 >`-skos` generates SKOS Concepts in output target 
 
->`domain=<domain>` specifies base URL to use for resources
+>`domain=<domain>` specifies base URI to use for resources
 
 >`stylesheet=<stylesheet>` specifies XSLT stylesheet to use instead of default stylesheet
 
@@ -176,3 +176,21 @@ From this, the actual use of such a property can be mapped to this newly created
 > (where `[]` should be replaced with the URI of the specific model element)
 
 It could be argued that we shouldn't use the identifier of the property, but the more readable label of the property. Because this would add more complexity to the translator, we have not done that (yet).
+
+### SKOS support
+We have added support for SKOS in the transformation. This has impact on various parts of the transformation. We summarize the most important ones below.
+
+> `<metadata>` and its properties is mapped to `skos:conceptScheme` with similar properties
+
+> `<element>` is mapped to `skos:Concept`, its name to `skos:prefLabel`, its description to `skos:scopeNote`
+
+> `<relationship>` is  mapped to `archimate:Relationship` 
+
+> `<view>` is  mapped to `skos:Concept` 
+
+> elements, views and relationships with properties are added to `skos:Collection` per type of concept
+
+
+
+
+
