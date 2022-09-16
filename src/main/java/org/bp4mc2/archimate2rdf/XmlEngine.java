@@ -14,22 +14,8 @@ public class XmlEngine {
 
   private static ClassPathResourceUriResolver uriResolver = null;
 
-  public static void transform(StreamSource source, String xslResource, StreamResult result)
-      throws TransformerConfigurationException,TransformerException {
-
-    transform(source,xslResource,result,null);
-
-  }
-
-  public static void transform(StreamSource source, StreamSource stylesheet, StreamResult result)
-      throws TransformerConfigurationException,TransformerException {
-
-    transform(source,stylesheet,result,null);
-
-  }
-
   public static void transform(StreamSource source, String xslResource, StreamResult result,
-      Object input) throws TransformerConfigurationException,TransformerException {
+      Object input, String images, Boolean skos) throws TransformerConfigurationException,TransformerException {
 
     // Set resolver, only ones
     if (uriResolver == null) {
@@ -40,11 +26,11 @@ public class XmlEngine {
     // Create input stream for the actual resource
     InputStream xslStream = XmlEngine.class.getClassLoader().getResourceAsStream(xslResource);
 
-    transform(source,new StreamSource(xslStream),result,input);
+    transform(source,new StreamSource(xslStream),result,input,images,skos);
   }
 
   public static void transform(StreamSource source, StreamSource stylesheet, StreamResult result,
-      Object input) throws TransformerConfigurationException,TransformerException {
+      Object input, String images, Boolean skos) throws TransformerConfigurationException,TransformerException {
 
     // Create a transformer for the stylesheet.
     Transformer transformer = tfactory.newTransformer(stylesheet);
@@ -52,6 +38,14 @@ public class XmlEngine {
     // Set parameter, if any
     if (input != null) {
       transformer.setParameter("args",input);
+    }
+    if (images != null) {
+      transformer.setParameter("images",images);
+    }
+    if (skos) {
+      transformer.setParameter("skos", "true");
+    } else {
+      transformer.setParameter("skos","false");
     }
 
     // Transform the source XML
