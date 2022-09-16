@@ -14,7 +14,7 @@ Current status:
 We expect the ontology to change. Our current focus is the creation of a complete translator. This means that the current ontology is as close to the XSD as possible, focussing on simplicity. The ontology doesn't contain any "knowledge" about the ArchiMate language that is not available in the XSD (the ontology is actually generated from the XSD at this moment!). We expect that the final ontology will have a more semantic orientation.
 
 Recent improvements:
-- Creation of URI's that follow the Dutch URI strategy
+- Creation of URI's that are dereferenceable
 - Promotion of Linked Data properties in ArchiMate (that start with "http" or contain a ":") to true RDF properties
 - Inclusion of namespaces of a number of popular vocabularies, allowing shorthand reference in ArchiMate properties or their values
 - The option to generate a SKOS enriched version of the model
