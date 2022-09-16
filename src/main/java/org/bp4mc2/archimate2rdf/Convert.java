@@ -75,7 +75,7 @@ public class Convert {
         LOG.error("Unknown option: {}",args[0]);
       }
     } else {
-      LOG.info("Usage: archimate2rdf [-o] [<inputfile>] [<outputfile>] [domain=<domain>] [stylesheet=<stylesheet>] [-skos]");
+      LOG.info("Usage: archimate2rdf <input.xml> <output.xml> [-skos] [domain=<domain>] [stylesheet=<stylesheet>] [images=<images>]");
     }
   }
 }
