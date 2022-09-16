@@ -274,7 +274,7 @@
                     <xsl:element name="rdfs:seeAlso">
                         <xsl:attribute name="rdf:resource"><xsl:value-of select="$images"/><xsl:value-of select="@identifier" />.png</xsl:attribute>
                     </xsl:element>
-                    <xsl:element name="foaf:depiction">
+                    <xsl:element name="foaf:image">
                         <xsl:attribute name="rdf:resource"><xsl:value-of select="$images"/><xsl:value-of select="@identifier" />.png</xsl:attribute>
                     </xsl:element>
                 </xsl:if>
