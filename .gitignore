@@ -1,5 +1,11 @@
+*.bat
 target
-data/*.xsd
-data/*.ttl
-data/*.bak
-data/*.json
+data/*.*
+.vscode/*
+.idea/*.*
+.idea
+*.iml
+.idea/misc.xml
+.idea/misc.xml
+.idea/workspace.xml
+archimate2rdf.iml

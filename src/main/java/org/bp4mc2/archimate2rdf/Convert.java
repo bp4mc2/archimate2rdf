@@ -16,27 +16,39 @@ public class Convert {
 
   public static void main(String[] args) {
 
-    if ((args.length == 2) || (args.length == 3)) {
+    if (args.length >1) {
 
       LOG.info("Starting conversion");
       LOG.info("Input file:  {}",args[0]);
-      LOG.info("Output file: {}",args[1]);
-      if (args.length == 3) {
-        LOG.info("Stylesheet:  {}",args[2]);
-      }
+      LOG.info("Output file: {}",args[1]);      
 
       File inputFile = new File(args[0]);
       File outputFile = new File(args[1]);
       File stylesheetFile = null;
-      if (args.length == 3) {
-        stylesheetFile = new File(args[2]);
+      String domain = null;
+      String images = null;
+      Boolean skos = false;
+      for (int i = 0; i < args.length; i++) {
+        if (args[i].startsWith("domain=")) {
+          domain = args[i].substring(7);
+          LOG.info("Domain:  {}", domain);
+        } else if (args[i].equals("-skos")) {
+          skos = true;
+          LOG.info("Generate SKOS");
+        } else if (args[i].startsWith("stylesheet=")) {
+          stylesheetFile = new File(args[i].substring(11));
+          LOG.info("Stylesheet:  {}", args[i].substring(11));
+        } else if (args[i].startsWith("images=")) {
+          images = args[i].substring(7);
+          LOG.info("Images:  {}", args[i].substring(7));
+        }
       }
 
       try {
         if (stylesheetFile != null) {
-          XmlEngine.transform(new StreamSource(inputFile),new StreamSource(stylesheetFile),new StreamResult(outputFile));
+          XmlEngine.transform(new StreamSource(inputFile),new StreamSource(stylesheetFile),new StreamResult(outputFile), domain, images, skos);
         } else {
-          XmlEngine.transform(new StreamSource(inputFile),"xsl/archimate2rdf.xsl",new StreamResult(outputFile));
+          XmlEngine.transform(new StreamSource(inputFile),"xsl/archimate2rdf.xsl",new StreamResult(outputFile), domain, images, skos);
         }
         LOG.info("Done!");
       }
@@ -50,7 +62,7 @@ public class Convert {
         File outputFile = new File("data/archimate.ttl");
         try {
           //Transform to ttl
-          XmlEngine.transform(new StreamSource(inputFile), "xsl/xsd2owl.xsl",new StreamResult(outputFile));
+          XmlEngine.transform(new StreamSource(inputFile), "xsl/xsd2owl.xsl",new StreamResult(outputFile), null, null, false);
           //Transform original outputFile to different formats
           Model model = RDFDataMgr.loadModel("data/archimate.ttl");
           RDFDataMgr.write(new FileOutputStream("data/archimate.json"),model, RDFFormat.JSONLD_COMPACT_PRETTY);
@@ -63,7 +75,7 @@ public class Convert {
         LOG.error("Unknown option: {}",args[0]);
       }
     } else {
-      LOG.info("Usage: archimate2rdf <input.xml> <output.xml>");
+      LOG.info("Usage: archimate2rdf <input.xml> <output.xml> [-skos] [domain=<domain>] [stylesheet=<stylesheet>] [images=<images>]");
     }
   }
 }
